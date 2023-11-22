@@ -1,4 +1,4 @@
-export type Web3AuthButtonOptions = Readonly<{
+export type AwesomeOnboardingOptions = Readonly<{
 	label?: string
 	class?: string
 	overrideClass?: string
@@ -8,8 +8,6 @@ export type Web3AuthButtonOptions = Readonly<{
 	redirectOnSignin?: boolean
 }>
 
-export type Web3AuthButtonEnvs = Readonly<{
-	web3authClientId: string
-	web3authNetwork: 'sapphire_devnet' | 'sapphire_mainnet'
-	web3authInfuraKey: string
+export type AwesomeOnboardingEnvs = Readonly<{
+	environmentId: string
 }>

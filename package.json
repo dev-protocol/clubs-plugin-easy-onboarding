@@ -40,11 +40,11 @@
 		"@dynamic-labs/ethereum": "^0.19.2",
 		"@dynamic-labs/sdk-react-core": "^0.19.2",
 		"@dynamic-labs/wagmi-connector": "^0.19.2",
-		"@wagmi/core": "^1.4.7",
 		"bignumber.js": "9.1.2",
 		"ramda": "0.29.1",
 		"type-fest": "^4.7.1",
-		"viem": "^1.19.6"
+		"viem": "^1.19.6",
+		"wagmi": "^1.4.7"
 	},
 	"peerDependencies": {
 		"@devprotocol/clubs-core": "^2.1.1",
@@ -66,6 +66,7 @@
 		"@types/dotenv": "8.2.0",
 		"@types/node": "20.9.0",
 		"@types/ramda": "0.29.9",
+		"@types/react": "^18.2.38",
 		"@typescript-eslint/eslint-plugin": "6.11.0",
 		"@typescript-eslint/parser": "6.11.0",
 		"astro": "^3.0.12",
