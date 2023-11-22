@@ -1,8 +1,8 @@
 {
-	"name": "@devprotocol/clubs-plugin-web3auth",
+	"name": "@devprotocol/clubs-plugin-awesome-onboarding",
 	"version": "0.1.2",
 	"type": "module",
-	"description": "Clubs plugin for integrating web3auth as a wallet provider.",
+	"description": "Clubs plugin for intengrating awesome user onboarding.",
 	"main": "dist/index.js",
 	"exports": {
 		".": {
@@ -37,19 +37,24 @@
 	"dependencies": {
 		"@devprotocol/dev-kit": "8.6.0",
 		"@devprotocol/util-ts": "4.0.0",
+		"@dynamic-labs/ethereum": "^0.19.2",
+		"@dynamic-labs/sdk-react-core": "^0.19.2",
+		"@dynamic-labs/wagmi-connector": "^0.19.2",
 		"@wagmi/core": "^1.4.7",
-		"@web3auth/base": "^7.1.0",
-		"@web3auth/modal": "^7.1.1",
 		"bignumber.js": "9.1.2",
 		"ramda": "0.29.1",
-		"type-fest": "^4.7.1"
+		"type-fest": "^4.7.1",
+		"viem": "^1.19.6"
 	},
 	"peerDependencies": {
 		"@devprotocol/clubs-core": "^2.1.1",
-		"ethers": "^6.0.0"
+		"ethers": "^6.0.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.3.1",
+		"@astrojs/react": "^3.0.6",
 		"@astrojs/svelte": "^4.0.3",
 		"@astrojs/tailwind": "^5.0.0",
 		"@astrojs/vue": "^3.0.0",
@@ -75,8 +80,8 @@
 		"prettier-plugin-astro": "^0.12.0",
 		"prettier-plugin-svelte": "^3.0.0",
 		"prettier-plugin-tailwindcss": "^0.5.7",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"rimraf": "5.0.5",
 		"rollup": "4.4.1",
 		"rollup-plugin-dts": "^6.1.0",
@@ -99,5 +104,13 @@
 			},
 			"compile": false
 		}
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/dev-protocol/clubs-plugin-awesome-onboarding.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dev-protocol/clubs-plugin-awesome-onboarding/issues"
+	},
+	"homepage": "https://github.com/dev-protocol/clubs-plugin-awesome-onboarding#readme"
 }
