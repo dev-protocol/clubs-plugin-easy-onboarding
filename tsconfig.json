@@ -15,6 +15,7 @@
 		"config.js",
 		"rollup.config.js",
 		"rollup.config.ui.js",
+		"rollup.config.translation.js",
 		"tailwind.config.js"
 	]
 }

@@ -22,9 +22,11 @@
 	"scripts": {
 		"test": "ava || echo 'skip'",
 		"preview": "astro --root .preview/preview.static dev",
+		"prepreview": "yarn out:translation",
 		"build": "rollup -c",
 		"pretest": "yarn build",
-		"prebuild": "rimraf dist",
+		"prebuild": "yarn out:translation && rimraf dist",
+		"out:translation": "rimraf src/i18n/en && rollup -c rollup.config.translation.js",
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext .ts,.js --fix",
 		"lint:format": "prettier --write '**/*.{ts,js,tsx,jsx,astro,vue,svelte,json,md,yml}'",
