@@ -7,7 +7,6 @@ import {
 	type LocaleResource,
 } from '@dynamic-labs/sdk-react-core'
 import { DynamicWagmiConnector } from '@dynamic-labs/wagmi-connector'
-
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import Button from './Button'
 import type { AwesomeOnboardingEnvs, AwesomeOnboardingOptions } from '../..'
@@ -19,7 +18,7 @@ type Props = AwesomeOnboardingOptions & AwesomeOnboardingEnvs
 
 const langs = ['en', 'ja']
 
-export default ({ chainId, environmentId }: Props) => {
+export default ({ chainId = 137, environmentId }: Props) => {
 	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
 
 	useEffect(() => {
@@ -34,13 +33,13 @@ export default ({ chainId, environmentId }: Props) => {
 		<DynamicContextProvider
 			settings={{
 				environmentId,
-				walletConnectPreferredChains: [`eip155:${chainId ?? 137}`],
+				walletConnectPreferredChains: [`eip155:${chainId}`],
 				walletConnectors: [EthereumWalletConnectors],
 			}}
 			locale={locale}
 		>
 			<DynamicWagmiConnector>
-				<Button />
+				<Button chainId={chainId} />
 			</DynamicWagmiConnector>
 		</DynamicContextProvider>
 	) : (

@@ -16,7 +16,7 @@ export default () =>
 				options: [],
 			},
 			{
-				id: 'devprotocol:clubs:plugin:web3auth',
+				id: 'devprotocol:clubs:plugin:awesome-onboarding',
 				options: [],
 			},
 		],

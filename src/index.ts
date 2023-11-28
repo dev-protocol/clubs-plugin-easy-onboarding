@@ -21,8 +21,8 @@ const getSlots = (async (_, { chainId, rpcUrl }) => {
 }) satisfies ClubsFunctionGetSlots
 
 const meta = {
-	id: 'devprotocol:clubs:plugin:web3auth',
-	displayName: 'Web3Auth',
+	id: 'devprotocol:clubs:plugin:awesome-onboarding',
+	displayName: 'Awesome Onboarding',
 	category: ClubsPluginCategory.Uncategorized,
 	readme: Readme,
 } satisfies ClubsPluginMeta

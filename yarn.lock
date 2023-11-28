@@ -546,6 +546,13 @@
     eventemitter3 "5.0.1"
     stream "0.0.2"
 
+"@dynamic-labs/ethers-v6@^0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-0.19.3.tgz#8285f1225a2e803b93cecbab1622fcb44853d6dc"
+  integrity sha512-/tN8A8hkh8Kq253HnCSG9U1wHLOuOF8aWvEBck+R2N9NWZtkP4pPFny+Yywql5XjsDBgZ6em0M3UGmGtdoS+pw==
+  dependencies:
+    "@dynamic-labs/wallet-connector-core" "0.19.3"
+
 "@dynamic-labs/iconic@0.1.37":
   version "0.1.37"
   resolved "https://registry.yarnpkg.com/@dynamic-labs/iconic/-/iconic-0.1.37.tgz#174aab53ae4a21814c003ac8f9e02201c4235a41"
@@ -655,6 +662,11 @@
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-0.19.2.tgz#9636fcd6c8d5c060e0350879004da8fc1e5f06f9"
   integrity sha512-kjPWyZRyuH6cWgz0vFU66AOsg/5WG1p+Z/kd5rD2Nanpfgriv3brqK1w4tdQUiko/C1LZB1/f8RRsebbL7XbCw==
+
+"@dynamic-labs/wallet-connector-core@0.19.3":
+  version "0.19.3"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-0.19.3.tgz#48d4b5b29c9123a4f89e201ea30df82929047acf"
+  integrity sha512-XtWfaRqLgyS1OQl6pI4AlZTDq4wOpXE1fRIKFo9X7TkgXU5Ppm6Y1kouUGbCakcU6oZ4AGQMwbTTOZCiQy7Y4Q==
 
 "@emmetio/abbreviation@^2.3.3":
   version "2.3.3"
