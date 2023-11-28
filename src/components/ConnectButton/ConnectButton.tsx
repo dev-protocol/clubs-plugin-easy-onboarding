@@ -11,7 +11,7 @@ import { DynamicWagmiConnector } from '@dynamic-labs/wagmi-connector'
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import Button from './Button'
 import type { AwesomeOnboardingEnvs, AwesomeOnboardingOptions } from '../..'
-import { LocaleEn, LocaleJa } from '../../i18n/dynamic'
+import { Japanese } from '../../i18n/dynamic'
 import { useEffect, useState } from 'react'
 import type { UndefinedOr } from '@devprotocol/util-ts'
 
@@ -20,17 +20,17 @@ type Props = AwesomeOnboardingOptions & AwesomeOnboardingEnvs
 const langs = ['en', 'ja']
 
 export default ({ chainId, environmentId }: Props) => {
-	const [locale, setLocale] = useState<UndefinedOr<LocaleResource>>()
+	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
 
 	useEffect(() => {
 		// eslint-disable-next-line functional/no-conditional-statements
 		if (typeof window !== 'undefined') {
 			const loc = window.navigator.languages.find((l) => langs.includes(l))
-			setLocale(loc === 'ja' ? LocaleJa : LocaleEn)
+			setLocale(loc === 'ja' ? Japanese : undefined)
 		}
 	})
 
-	return locale !== undefined ? (
+	return locale !== null ? (
 		<DynamicContextProvider
 			settings={{
 				environmentId,

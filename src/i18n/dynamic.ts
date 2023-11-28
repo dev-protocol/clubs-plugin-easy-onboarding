@@ -1,8 +1,6 @@
 import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
-import { translation } from './en/translation.js'
-import { mergeDeepRight } from 'ramda'
 
-const Ja = {
+const ResourceJapanese = {
 	dyn_login: {
 		title: {
 			all: 'ログイン',
@@ -15,16 +13,12 @@ const Ja = {
 	},
 } satisfies LocaleResource['ja']
 
-export const LocaleEn = {
-	en: translation,
-} satisfies LocaleResource
-
-export const LocaleJa = {
+export const Japanese = {
 	/**
 	 * Dynamic says...
 	 * > We just support “en” for now, so that will be the only valid key for the LocaleResource object.
 	 * > https://docs.dynamic.xyz/guides/customizing-copy
 	 * So, it needs to assign Japanese translation as English.
 	 */
-	en: mergeDeepRight(translation, Ja),
+	en: ResourceJapanese,
 } satisfies LocaleResource
