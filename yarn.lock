@@ -584,10 +584,10 @@
     stream-browserify "^3.0.0"
     util "^0.12.4"
 
-"@devprotocol/clubs-core@2.3.3":
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/@devprotocol/clubs-core/-/clubs-core-2.3.3.tgz#39f20c7276d14b814932cfa0292874a95319d983"
-  integrity sha512-cuv4gBjQ1QCicYZCOtIfh/DYoeaz5pNqfFV9Yf/DPiMK4AuxkUdln3ttqcQhfI81JDN2DrL64x/rcwAxxveMBw==
+"@devprotocol/clubs-core@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@devprotocol/clubs-core/-/clubs-core-2.4.0.tgz#f356402f09813b3fc5a72378300d50a5cca73431"
+  integrity sha512-m8J+YmdLu6Q/u3xt92YL9rY7VXrv3pvZ3QXTdZy55clttAZ/+nVtlNgKL0nDiKuH0GqTqUofqXXqB6YICKXnNg==
   dependencies:
     "@devprotocol/dev-kit" "8.6.0"
     "@devprotocol/elements" "1.1.0"
@@ -598,7 +598,7 @@
     dompurify "^3.0.6"
     js-base64 "^3.7.2"
     lit "^3.0.0"
-    marked "^9.1.2"
+    marked "^10.0.0"
     ramda "^0.29.0"
     rxjs "^7.8.1"
     web3modal "^1.9.12"
@@ -6295,10 +6295,10 @@ markdown-table@^3.0.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
   integrity sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==
 
-marked@^9.1.2:
-  version "9.1.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-9.1.6.tgz#5d2a3f8180abfbc5d62e3258a38a1c19c0381695"
-  integrity sha512-jcByLnIFkd5gSXZmjNvS1TlmRhCXZjIzHYlaGkPlLIekG55JDR2Z4va9tZwCiP+/RDERiNhMOFu01xd6O5ct1Q==
+marked@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-10.0.0.tgz#7fe1805bb908433d760e2de0fcc8841a2b2d745c"
+  integrity sha512-YiGcYcWj50YrwBgNzFoYhQ1hT6GmQbFG8SksnYJX1z4BXTHSOrz1GB5/Jm2yQvMg4nN1FHP4M6r03R10KrVUiA==
 
 matcher@^5.0.0:
   version "5.0.0"
