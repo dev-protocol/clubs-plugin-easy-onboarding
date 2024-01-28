@@ -44,7 +44,7 @@
 		"bignumber.js": "9.1.2",
 		"ramda": "0.29.1",
 		"type-fest": "^4.7.1",
-		"viem": "^1.19.6",
+		"viem": "^2.0.0",
 		"wagmi": "^1.4.7"
 	},
 	"peerDependencies": {
