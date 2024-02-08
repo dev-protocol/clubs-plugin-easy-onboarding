@@ -26,11 +26,11 @@
     "@jridgewell/trace-mapping" "^0.3.9"
 
 "@astrojs/check@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/check/-/check-0.5.0.tgz#2812bc008f07eec1330c3ed72a11987ccfe7e458"
-  integrity sha512-Vik3siZOoPuaUU2SicE3aBd1vOOMOGkRKDz2Pl9gLXPWbjtzdydWhC2Muoe+H8wVUfOzzZ3Jh5KYbrYw8akf4Q==
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/check/-/check-0.5.1.tgz#46ec3d8b36a34323cd058f8340408ca341ae6e2b"
+  integrity sha512-BeAEE4UBTpXp7ICLf81ZB8vUogtzYXztuoxliJNnxBbDZydoThsks4VRBv0AdSNLmaLZMYLb8Xpobrjz+S5Oyg==
   dependencies:
-    "@astrojs/language-server" "^2.7.0"
+    "@astrojs/language-server" "^2.7.1"
     chokidar "^3.5.3"
     fast-glob "^3.3.1"
     kleur "^4.1.5"
@@ -41,12 +41,7 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-1.8.2.tgz#f305d5724c45a9932a8ef4e87b2e7227d15d1c2b"
   integrity sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==
 
-"@astrojs/compiler@^2.4.0":
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.5.1.tgz#21627dcea8f596e370ec4770b9d667aa31abb38f"
-  integrity sha512-o2hKiFJXZOm1Gov+RGXSWnKlnb/UF7KRTx/Y2uazYe3+MrLY+sqLN+yB4EH2bElc0l1K9cDb4mZSejuq563rGQ==
-
-"@astrojs/compiler@^2.5.3":
+"@astrojs/compiler@^2.4.0", "@astrojs/compiler@^2.5.3":
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-2.5.3.tgz#eb34fa21cbd395f2b5493aa06d91dd9e9faf3bc2"
   integrity sha512-jzj01BRv/fmo+9Mr2FhocywGzEYiyiP2GVHje1ziGNU6c97kwhYGsnvwMkHrncAy9T9Vi54cjaMK7UE4ClX4vA==
@@ -56,10 +51,10 @@
   resolved "https://registry.yarnpkg.com/@astrojs/internal-helpers/-/internal-helpers-0.2.1.tgz#4e2e6aabaa9819f17119aa10f413c4d6122c94cf"
   integrity sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==
 
-"@astrojs/language-server@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-2.7.0.tgz#3d51c5e72c2e42e25abd802e1a7abda9d12b9c3e"
-  integrity sha512-4bM2kXteuBCf1l89dKIbAQZpenMBgqrIZCPp+BAbCar6lvdHNfvrUyxo/7/jUJQl7MR/AHaf81odfQywIcJVKg==
+"@astrojs/language-server@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/language-server/-/language-server-2.7.1.tgz#6dfd66163e96f7717ac1891ff4b8ed72b07eccaa"
+  integrity sha512-0B5DLmw9UYzUcT54oGmCBZMRNVFjBNTnt2ddtKhTgvmgLzmHmJyUJidjbgsBjUg+L7TDRLfCrX0XrZvGQySF6Q==
   dependencies:
     "@astrojs/compiler" "^2.4.0"
     "@jridgewell/sourcemap-codec" "^1.4.15"
@@ -10174,26 +10169,16 @@ volar-service-typescript@0.0.28:
     vscode-uri "^3.0.8"
 
 vscode-css-languageservice@^6.2.10:
-  version "6.2.10"
-  resolved "https://registry.yarnpkg.com/vscode-css-languageservice/-/vscode-css-languageservice-6.2.10.tgz#ba114d92d634df7b45f572a6eaaccd29cbde5d9d"
-  integrity sha512-sYUZPku4mQ06AWGCbMyjv2tdR6juBW6hTbVPFwbJvNVzdtEfBioQOgkdXg7yMJNWnXkvWSU1FL2kb4Vxu5Cdyw==
+  version "6.2.12"
+  resolved "https://registry.yarnpkg.com/vscode-css-languageservice/-/vscode-css-languageservice-6.2.12.tgz#f8f9f335fb4b433f557c51c62e687b4f62c0c786"
+  integrity sha512-PS9r7HgNjqzRl3v91sXpCyZPc8UDotNo6gntFNtGCKPhGA9Frk7g/VjX1Mbv3F00pn56D+rxrFzR9ep4cawOgA==
   dependencies:
-    "@vscode/l10n" "^0.0.16"
+    "@vscode/l10n" "^0.0.18"
     vscode-languageserver-textdocument "^1.0.11"
     vscode-languageserver-types "3.17.5"
     vscode-uri "^3.0.8"
 
-vscode-html-languageservice@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/vscode-html-languageservice/-/vscode-html-languageservice-5.1.1.tgz#8e56f7e11c1e3f4a9d56de0f97badea9296f4e04"
-  integrity sha512-JenrspIIG/Q+93R6G3L6HdK96itSisMynE0glURqHpQbL3dKAKzdm8L40lAHNkwJeBg+BBPpAshZKv/38onrTQ==
-  dependencies:
-    "@vscode/l10n" "^0.0.16"
-    vscode-languageserver-textdocument "^1.0.11"
-    vscode-languageserver-types "^3.17.5"
-    vscode-uri "^3.0.8"
-
-vscode-html-languageservice@^5.1.1:
+vscode-html-languageservice@^5.1.0, vscode-html-languageservice@^5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/vscode-html-languageservice/-/vscode-html-languageservice-5.1.2.tgz#8309fa7f319c873af11cf23ddbba4e68d6c42e2c"
   integrity sha512-wkWfEx/IIR3s2P5yD4aTGHiOb8IAzFxgkSt1uSC3itJ4oDAm23yG7o0L29JljUdnXDDgLafPAvhv8A2I/8riHw==
