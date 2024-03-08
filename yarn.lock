@@ -648,11 +648,11 @@
     stream "0.0.2"
 
 "@dynamic-labs/ethers-v6@^1.0.0":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-1.2.1.tgz#b60c17895f81b6d20ca54bc76923b09bd3dbc7f6"
-  integrity sha512-V+R85ztrToXX0EUoZtjlnvOze08pQsEMz9mI/HETgcqRii7SfhXkUbgSgqQQSqEzxmvcbcvbOQMDf50fd/Etng==
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-1.3.1.tgz#61a4358405e7df7c420995d4efc7845da527bc24"
+  integrity sha512-3ERU1Y/EljyR+Y8MmwXc+lz78FljqV1bEr9Fxzgcb7UDabp5BCtCH8Ao74gTBQwOZvRuur11OC9tIZdIp0RKYw==
   dependencies:
-    "@dynamic-labs/wallet-connector-core" "1.2.1"
+    "@dynamic-labs/wallet-connector-core" "1.3.1"
 
 "@dynamic-labs/iconic@0.1.37":
   version "0.1.37"
@@ -764,10 +764,10 @@
   resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-0.19.2.tgz#9636fcd6c8d5c060e0350879004da8fc1e5f06f9"
   integrity sha512-kjPWyZRyuH6cWgz0vFU66AOsg/5WG1p+Z/kd5rD2Nanpfgriv3brqK1w4tdQUiko/C1LZB1/f8RRsebbL7XbCw==
 
-"@dynamic-labs/wallet-connector-core@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-1.2.1.tgz#d3707261f49b1434f9494aef790e4b2eaea71780"
-  integrity sha512-7cpQ61q/hU3f4Zcqyqdn+P1Pikpj2fMAvQaJAYvM2huWHa3BrjTME58vnYenO0iDJGNjinOYqcTG2saM6zPkMQ==
+"@dynamic-labs/wallet-connector-core@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-1.3.1.tgz#dc25a6063878b88aea86c5843ce588d5561fc3b2"
+  integrity sha512-xa0r8jz7mw8BtS2tHm6yphECZbsrxliHfpauy68tlor4iZHNVFME0u/XGwrHLfjTP/khVJqfQAfEUnLIV2q6Fw==
 
 "@emmetio/abbreviation@^2.3.3":
   version "2.3.3"
