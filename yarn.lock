@@ -747,9 +747,9 @@
     "@dynamic-labs/types" "0.19.2"
 
 "@dynamic-labs/wagmi-connector@^1.0.0":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@dynamic-labs/wagmi-connector/-/wagmi-connector-1.2.1.tgz#8681e1ddf1418d6b47a03c85395ab9f26f8395a6"
-  integrity sha512-o0bAZu/ilcMWxom16SwVdvGlolE8WHJXjiMA/GxlAa65poiv5BbJQG2erY5wl+rvYgzssI5k6iFIi8qm/SXQ0g==
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/wagmi-connector/-/wagmi-connector-1.3.1.tgz#dca7d8f848d36bca85e605767c7360b2bdbbcaca"
+  integrity sha512-STnhS6OlDHVG/j8fEippe8mtjx8vQgIn5zXqBJVPlC5zeqroBH/AAHUYfT0Qc4JCIyjuZByRD9mUTZPCRe6ToA==
 
 "@dynamic-labs/wallet-book@0.19.2":
   version "0.19.2"
