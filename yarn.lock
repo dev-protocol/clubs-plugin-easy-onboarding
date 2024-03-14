@@ -10066,9 +10066,9 @@ viem@^1.0.0, viem@^1.1.4:
     ws "8.13.0"
 
 viem@^2.0.0:
-  version "2.8.5"
-  resolved "https://registry.yarnpkg.com/viem/-/viem-2.8.5.tgz#c0120e7f228fbb5be760c625bb2637c7cfa1b8df"
-  integrity sha512-EAmZ/jP7Ycmu72zRrB+N/fINEXMVBaLLsUaHwu5LoIjAzmE/f/33RV9AlhUA6RNZ5kujomylSytIyDakzQYXCQ==
+  version "2.8.6"
+  resolved "https://registry.yarnpkg.com/viem/-/viem-2.8.6.tgz#7467a0f113b4b13dd53fde4797aec1e686672f03"
+  integrity sha512-LqxLOSFtXfbC3tsiZ8Km8jKR4ktTOLfigL2dR9IN28He2+QrNhYvvwGPz3P4hbfU12Wvuxo6mWGZ2L1lpNtvrA==
   dependencies:
     "@adraffy/ens-normalize" "1.10.0"
     "@noble/curves" "1.2.0"
