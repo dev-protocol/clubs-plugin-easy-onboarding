@@ -86,10 +86,10 @@
     vscode-html-languageservice "^5.1.2"
     vscode-uri "^3.0.8"
 
-"@astrojs/markdown-remark@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-4.3.0.tgz#040ae4d651eda32f8910e2caa2ad414b976d3abc"
-  integrity sha512-iZOgYj/yNDvBRfKqkGuAvjeONhjQPq8Uk3HjyIgcTK5valq03NiUgSc5Ovq00yUVBeYJ/5EDx23c8xqtkkBlPw==
+"@astrojs/markdown-remark@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/markdown-remark/-/markdown-remark-4.3.1.tgz#7f3c395d804ce49f54d81e848ea69a676020af28"
+  integrity sha512-eJFi600tkRjTFiwzY9oD8AgCgB7gFqyWCKWuZ33dATVBgLiROD+zlMZ8STZzU7+ZALvmiUAun/K7umTmP5YfVQ==
   dependencies:
     "@astrojs/prism" "^3.0.0"
     github-slugger "^2.0.0"
@@ -181,7 +181,7 @@
     "@babel/highlight" "^7.23.4"
     chalk "^2.4.2"
 
-"@babel/code-frame@^7.23.5", "@babel/code-frame@^7.24.1":
+"@babel/code-frame@^7.23.5", "@babel/code-frame@^7.24.1", "@babel/code-frame@^7.24.2":
   version "7.24.2"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.24.2.tgz#718b4b19841809a58b29b68cde80bc5e1aa6d9ae"
   integrity sha512-y5+tLQyV8pg3fsiln67BVLD1P13Eg4lh5RW9mF0zUuvLrv9uIQ4MCL+CRT+FTsBlBjcIan6PGsLcBN0m3ClUyQ==
@@ -229,6 +229,27 @@
     "@babel/parser" "^7.24.0"
     "@babel/template" "^7.24.0"
     "@babel/traverse" "^7.24.0"
+    "@babel/types" "^7.24.0"
+    convert-source-map "^2.0.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.2.3"
+    semver "^6.3.1"
+
+"@babel/core@^7.24.3":
+  version "7.24.3"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.24.3.tgz#568864247ea10fbd4eff04dda1e05f9e2ea985c3"
+  integrity sha512-5FcvN1JHw2sHJChotgx8Ek0lyuh4kCKelgMTTqhYJJtloNvUfpAFMeNQUtdlIaktwrSV9LtCdqwk48wL2wBacQ==
+  dependencies:
+    "@ampproject/remapping" "^2.2.0"
+    "@babel/code-frame" "^7.24.2"
+    "@babel/generator" "^7.24.1"
+    "@babel/helper-compilation-targets" "^7.23.6"
+    "@babel/helper-module-transforms" "^7.23.3"
+    "@babel/helpers" "^7.24.1"
+    "@babel/parser" "^7.24.1"
+    "@babel/template" "^7.24.0"
+    "@babel/traverse" "^7.24.1"
     "@babel/types" "^7.24.0"
     convert-source-map "^2.0.0"
     debug "^4.1.0"
@@ -314,9 +335,9 @@
     "@babel/types" "^7.22.15"
 
 "@babel/helper-module-imports@^7.22.15":
-  version "7.24.1"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.24.1.tgz#961ea2c12aad6cfc75b8c396c81608a08283027b"
-  integrity sha512-HfEWzysMyOa7xI5uQHc/OcZf67/jc+xe/RZlznWQHhbb8Pg1SkRdbK4yEi61aY8wxQA7PkSfoojtLQP/Kpe3og==
+  version "7.24.3"
+  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.24.3.tgz#6ac476e6d168c7c23ff3ba3cf4f7841d46ac8128"
+  integrity sha512-viKb0F9f2s0BCS22QSF308z/+1YWKV/76mwt61NBzS5izMzDPwdq1pTrzf+Li3npBWX9KdQbkeCt1jSAM7lZqg==
   dependencies:
     "@babel/types" "^7.24.0"
 
@@ -3759,15 +3780,15 @@ arrify@^3.0.0:
   integrity sha512-tLkvA81vQG/XqE2mjDkGQHoOINtMHtysSnemrmoGe6PydDPMRbVugqyk4A6V/WDWEfm3l+0d8anA9r8cv/5Jaw==
 
 astro@^4.0.0:
-  version "4.5.7"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-4.5.7.tgz#c9b4497783288d1b6864ce65b51e963a1e504d08"
-  integrity sha512-Ioeg3TV42dOJvf6GlmykeR3EKZ8+JcnZyJ/X9qDPzVf2OREmtvW0182YCDXQBqwXFRHndZRcHLqinAWjzZYh/A==
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-4.5.8.tgz#371d81eaff93888a758d9797dbf42dba7e2613c8"
+  integrity sha512-bhKsoZQWT6LW8aYMvTGglZTPa3rYRbcdc2buiJyFPCvSWOOyZmxqpp6vtQ+x6fXxD8P1NecM/c4g5GaPi+MokQ==
   dependencies:
     "@astrojs/compiler" "^2.7.0"
     "@astrojs/internal-helpers" "0.3.0"
-    "@astrojs/markdown-remark" "4.3.0"
+    "@astrojs/markdown-remark" "4.3.1"
     "@astrojs/telemetry" "3.0.4"
-    "@babel/core" "^7.23.3"
+    "@babel/core" "^7.24.3"
     "@babel/generator" "^7.23.3"
     "@babel/parser" "^7.23.3"
     "@babel/plugin-transform-react-jsx" "^7.22.5"
@@ -10221,9 +10242,9 @@ viem@^2.0.0:
     ws "8.13.0"
 
 vite@^5.1.4:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-5.2.0.tgz#a3f899b2fbfb7849f9ffdc3fb2ccd00b1acdef05"
-  integrity sha512-xMSLJNEjNk/3DJRgWlPADDwaU9AgYRodDH2t6oENhJnIlmU9Hx1Q6VpjyXua/JdMw1WJRbnAgHJ9xgET9gnIAg==
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-5.2.2.tgz#b98f8de352d22e21d99508274ddd053ef82bf238"
+  integrity sha512-FWZbz0oSdLq5snUI0b6sULbz58iXFXdvkZfZWR/F0ZJuKTSPO7v72QPXt6KqYeMFb0yytNp6kZosxJ96Nr/wDQ==
   dependencies:
     esbuild "^0.20.1"
     postcss "^8.4.36"
