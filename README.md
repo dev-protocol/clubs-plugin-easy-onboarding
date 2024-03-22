@@ -1,3 +1,9 @@
-# Clubs Plugin for web3auth
+# Clubs Plugin for Dynamic
 
-Clubs plugin for integrating [web3auth](https://web3auth.io/) as a wallet provider.
+Clubs plugin for integrating [Dynamic](https://www.dynamic.xyz/) as a wallet provider.
+
+## .env
+
+```
+PUBLIC_DYNAMIC_ENVIRONMENT_ID='your_dynamic_key'
+```

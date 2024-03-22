@@ -9,6 +9,13 @@ const props = Astro.props
 const { PUBLIC_DYNAMIC_ENVIRONMENT_ID } = import.meta.env
 ---
 
+<script>
+	// @dynamic-labs/iconic, a package what @dynamic-labs/sdk-react-core is required, is requiring `process` on the frontend.
+	if (typeof window.process === 'undefined') {
+		;(window as any).process = { env: {} }
+	}
+</script>
+
 <ConnectButton_
 	client:load
 	{...props}

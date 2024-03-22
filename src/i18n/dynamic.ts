@@ -12,9 +12,13 @@ const ResourceJapanese = {
 		separators: {
 			default: 'または',
 		},
+		email_form: {
+			email_field: { label: 'メールアドレス' },
+			submit_button: { label: '次へ' },
+		},
 	},
 	dyn_widget: {
-		connect: 'ウォレットに接続',
+		connect: 'ログイン',
 	},
 	dyn_wallet_list: {
 		view_all: 'すべてのウォレットを見る',
