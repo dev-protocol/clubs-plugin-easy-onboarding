@@ -39,7 +39,7 @@
 		"@devprotocol/util-ts": "4.0.0",
 		"@dynamic-labs/ethereum": "^0.19.2",
 		"@dynamic-labs/ethers-v6": "^1.0.0",
-		"@dynamic-labs/sdk-react-core": "^0.19.2",
+		"@dynamic-labs/sdk-react-core": "^1.0.0",
 		"@dynamic-labs/wagmi-connector": "^1.0.0",
 		"bignumber.js": "9.1.2",
 		"ramda": "0.29.1",
