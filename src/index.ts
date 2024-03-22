@@ -4,7 +4,7 @@ import type {
 	ClubsPluginMeta,
 } from '@devprotocol/clubs-core'
 import { ClubsPluginCategory } from '@devprotocol/clubs-core'
-import { ConnectButton } from './components'
+import ConnectButton from './components/ConnectButton.astro'
 import Readme from './readme.astro'
 
 const getSlots = (async (_, { chainId, rpcUrl }) => {

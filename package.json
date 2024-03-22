@@ -35,17 +35,12 @@
 	"author": "",
 	"license": "MPL-2.0",
 	"dependencies": {
-		"@devprotocol/dev-kit": "8.6.0",
 		"@devprotocol/util-ts": "4.0.0",
-		"@dynamic-labs/ethereum": "^0.19.2",
+		"@dynamic-labs/ethereum": "^1.4.0",
 		"@dynamic-labs/ethers-v6": "^1.0.0",
-		"@dynamic-labs/sdk-react-core": "^0.19.2",
-		"@dynamic-labs/wagmi-connector": "^1.0.0",
-		"bignumber.js": "9.1.2",
+		"@dynamic-labs/sdk-react-core": "^1.4.0",
 		"ramda": "0.29.1",
-		"type-fest": "^4.7.1",
-		"viem": "^2.0.0",
-		"wagmi": "^2.0.0"
+		"viem": "1"
 	},
 	"peerDependencies": {
 		"@devprotocol/clubs-core": "^2.1.1 || ^3.0.0",
