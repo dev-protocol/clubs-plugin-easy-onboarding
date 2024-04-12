@@ -7,7 +7,7 @@ import { ClubsPluginCategory } from '@devprotocol/clubs-core'
 import ConnectButton from './components/ConnectButton.astro'
 import Readme from './readme.astro'
 
-const getSlots = (async (_, { chainId, rpcUrl }) => {
+export const getSlots = (async (_, { chainId, rpcUrl }) => {
 	return [
 		{
 			slot: 'clubs:connect-button',
@@ -20,7 +20,7 @@ const getSlots = (async (_, { chainId, rpcUrl }) => {
 	]
 }) satisfies ClubsFunctionGetSlots
 
-const meta = {
+export const meta = {
 	id: 'devprotocol:clubs:plugin:awesome-onboarding',
 	displayName: 'Awesome Onboarding',
 	category: ClubsPluginCategory.Uncategorized,
