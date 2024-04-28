@@ -39,7 +39,7 @@
 		"@dynamic-labs/ethereum": "^1.4.0",
 		"@dynamic-labs/ethers-v6": "^1.0.0",
 		"@dynamic-labs/sdk-react-core": "^1.4.0",
-		"ramda": "0.29.1",
+		"ramda": "0.30.0",
 		"viem": "1"
 	},
 	"peerDependencies": {
