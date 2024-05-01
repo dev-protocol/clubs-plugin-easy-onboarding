@@ -1,12 +1,12 @@
+import { ClubsPluginCategory } from '@devprotocol/clubs-core'
 import type {
 	ClubsFunctionGetSlots,
 	ClubsFunctionPlugin,
 	ClubsPluginMeta,
 } from '@devprotocol/clubs-core'
-import { ClubsPluginCategory } from '@devprotocol/clubs-core'
 
-import ConnectButton from './components/ConnectButton.astro'
 import Readme from './readme.astro'
+import ConnectButton from './components/ConnectButton.astro'
 
 export const getSlots = (async (_, { chainId, rpcUrl }) => {
 	return [
