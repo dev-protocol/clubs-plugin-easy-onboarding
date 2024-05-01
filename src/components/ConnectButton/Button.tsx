@@ -13,6 +13,7 @@ import type { connection as Connection } from '@devprotocol/clubs-core/connectio
 import { whenDefinedAll } from '@devprotocol/util-ts'
 import type { Signer } from 'ethers'
 import { i18nFactory } from '@devprotocol/clubs-core'
+
 import { Strings } from '../../i18n/plugin'
 
 export default () => {
@@ -34,11 +35,13 @@ export default () => {
 		const cryptoWallet = dynamic.user?.verifiedCredentials.find(
 			(c) => c.format === 'blockchain',
 		)
+
 		// eslint-disable-next-line functional/no-conditional-statements
 		if (cryptoWallet) {
 			setIsWalletNeeded(Boolean(!dynamic.primaryWallet))
 			setWalletName(cryptoWallet.walletName)
 		}
+
 		dynamic.primaryWallet?.connector.ethers?.getSigner().then((_signer) => {
 			setSigner(_signer)
 		})
