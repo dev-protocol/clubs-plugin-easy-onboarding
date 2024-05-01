@@ -5,8 +5,8 @@
 import { useEffect, useState } from 'react'
 import type { UndefinedOr } from '@devprotocol/util-ts'
 import { EthersExtension } from '@dynamic-labs/ethers-v6'
-import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
+import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 import {
 	DynamicContextProvider,
 	DynamicWidgetContextProvider,
