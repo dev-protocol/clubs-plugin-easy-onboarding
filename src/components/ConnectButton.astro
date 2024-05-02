@@ -1,6 +1,6 @@
 ---
 import type { AwesomeOnboardingOptions } from '../types.ts'
-import ConnectButton_ from './ConnectButton/ConnectButton.tsx'
+import BrowserConnectButton_ from './ConnectButton/BrowserConnectButton.tsx'
 
 const props = Astro.props as AwesomeOnboardingOptions
 
@@ -14,7 +14,7 @@ const { PUBLIC_DYNAMIC_ENVIRONMENT_ID } = import.meta.env
 	}
 </script>
 
-<ConnectButton_
+<BrowserConnectButton_
 	client:load
 	{...props}
 	environmentId={PUBLIC_DYNAMIC_ENVIRONMENT_ID}

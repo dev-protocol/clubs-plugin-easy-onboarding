@@ -2,6 +2,7 @@
 /* eslint-disable functional/no-expression-statements */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/prefer-immutable-types */
+
 import type { Signer } from 'ethers'
 import { useEffect, useMemo, useState } from 'react'
 import { whenDefinedAll } from '@devprotocol/util-ts'

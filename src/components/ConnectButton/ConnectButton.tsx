@@ -2,6 +2,7 @@
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statements */
 /* eslint-disable functional/prefer-immutable-types */
+
 import { useEffect, useState } from 'react'
 import type { UndefinedOr } from '@devprotocol/util-ts'
 import { EthersExtension } from '@dynamic-labs/ethers-v6'
@@ -14,13 +15,11 @@ import {
 
 import Button from './Button'
 import { Japanese } from '../../i18n/dynamic'
-import type { AwesomeOnboardingEnvs, AwesomeOnboardingOptions } from '../..'
-
-type Props = AwesomeOnboardingOptions & AwesomeOnboardingEnvs
+import type { ConnectButtonProps } from '../../types'
 
 const langs = ['en', 'ja']
 
-export default ({ chainId = 137, environmentId }: Props) => {
+export default ({ chainId = 137, environmentId }: ConnectButtonProps) => {
 	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
 
 	useEffect(() => {
