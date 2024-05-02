@@ -5,3 +5,6 @@ export type AwesomeOnboardingOptions = Readonly<{
 export type AwesomeOnboardingEnvs = Readonly<{
 	environmentId: string
 }>
+
+export type ConnectButtonProps = AwesomeOnboardingOptions &
+	AwesomeOnboardingEnvs

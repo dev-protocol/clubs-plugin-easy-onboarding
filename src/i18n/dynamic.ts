@@ -1,6 +1,6 @@
 import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 
-// the English translation is here: node_modules/@dynamic-labs/sdk-react-core/src/lib/locale/en/translation.js
+// The English translation is here: node_modules/@dynamic-labs/sdk-react-core/src/lib/locale/en/translation.js.
 
 const ResourceJapanese = {
 	dyn_login: {
