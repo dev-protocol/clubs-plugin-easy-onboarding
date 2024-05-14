@@ -11,7 +11,6 @@ import type { connection as Connection } from '@devprotocol/clubs-core/connectio
 import {
 	DynamicWidget,
 	useDynamicContext,
-	useEffectOnce,
 	useWalletItemActions,
 } from '@dynamic-labs/sdk-react-core'
 
@@ -51,11 +50,11 @@ export default () => {
 		})
 	}, [dynamic.primaryWallet, dynamic.user])
 
-	useEffectOnce(() => {
+	useEffect(() => {
 		import('@devprotocol/clubs-core/connection').then((C) => {
 			setConnection(C.connection())
 		})
-	})
+	}, [])
 
 	useEffect(() => {
 		whenDefinedAll([connection, signer], ([_connection, _signer]) =>
