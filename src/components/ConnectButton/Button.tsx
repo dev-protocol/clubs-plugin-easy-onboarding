@@ -15,6 +15,7 @@ import {
 	useWalletItemActions,
 } from '@dynamic-labs/sdk-react-core'
 import NetworkError from './NetworkError'
+import { equals } from 'ramda'
 
 import { Strings } from '../../i18n/plugin'
 
@@ -56,14 +57,19 @@ export default ({ chainId }: { chainId: number }) => {
 		}
 
 		dynamic.primaryWallet?.connector.ethers?.getSigner().then((_signer) => {
-			setSigner(_signer)
-		})
+			const same = equals(_signer, signer)
+			// console.log('Called here', same)
+			!same && setSigner(_signer)
+		}) ?? setSigner(undefined)
 	}, [dynamic.primaryWallet, dynamic.user])
 
 	useEffect(() => {
 		if (dynamic.network === undefined) return
 		const connectedChain = Number(dynamic.network)
 		setUnexpectedNetwork(connectedChain !== chainId)
+		whenDefinedAll([connection], ([_connection]) =>
+			_connection.chain.next(dynamic.network),
+		)
 	}, [dynamic.network])
 
 	useEffect(() => {
@@ -73,9 +79,10 @@ export default ({ chainId }: { chainId: number }) => {
 	}, [])
 
 	useEffect(() => {
-		whenDefinedAll([connection, signer], ([_connection, _signer]) =>
-			_connection.signer.next(_signer),
-		)
+		whenDefinedAll([connection], ([_connection]) => {
+			// console.log('Called here', signer)
+			_connection.signer.next(signer)
+		})
 	}, [signer, connection])
 
 	return (
