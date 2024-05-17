@@ -38,7 +38,7 @@
 		"@devprotocol/util-ts": "4.0.0",
 		"@dynamic-labs/ethereum": "^1.4.0",
 		"@dynamic-labs/ethers-v6": "^1.0.0",
-		"@dynamic-labs/sdk-react-core": "^1.4.0",
+		"@dynamic-labs/sdk-react-core": "^2.0.0",
 		"ramda": "0.30.0",
 		"viem": "1"
 	},
