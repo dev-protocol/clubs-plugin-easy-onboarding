@@ -57,9 +57,9 @@
 		"@devprotocol/clubs-core": "3.12.4",
 		"@devprotocol/elements": "^1.1.0",
 		"@devprotocol/util-ts": "4.0.0",
-		"@dynamic-labs/ethereum": "^2.0.6",
-		"@dynamic-labs/ethers-v6": "^2.0.6",
-		"@dynamic-labs/sdk-react-core": "^2.0.6",
+		"@dynamic-labs/ethereum": "^2.0.7",
+		"@dynamic-labs/ethers-v6": "^2.0.7",
+		"@dynamic-labs/sdk-react-core": "^2.0.7",
 		"@rollup/plugin-commonjs": "^25.0.7",
 		"@rollup/plugin-json": "^6.1.0",
 		"@rollup/plugin-node-resolve": "^15.2.3",
@@ -71,7 +71,7 @@
 		"@types/react": "^18.3.2",
 		"@typescript-eslint/eslint-plugin": "7.9.0",
 		"@typescript-eslint/parser": "7.9.0",
-		"astro": "^4.8.3",
+		"astro": "^4.8.5",
 		"ava": "6.1.3",
 		"concurrently": "^8.2.2",
 		"dotenv": "16.4.5",
@@ -98,7 +98,7 @@
 		"typescript": "5.4.5",
 		"viem": "2",
 		"vue": "3.4.27",
-		"vue-tsc": "^2.0.17"
+		"vue-tsc": "^2.0.19"
 	},
 	"ava": {
 		"files": [
