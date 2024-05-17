@@ -595,12 +595,12 @@
     eventemitter3 "5.0.1"
     stream "0.0.2"
 
-"@dynamic-labs/ethers-v6@^1.0.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-1.4.0.tgz#f34f0236513da36cc432fbdb2a54b2c67b12bd1d"
-  integrity sha512-+vYFj4wg/lFDMiyx62QIMD/P2+sbWL7ADhPqp0HPrHcSXxYHdVhS1N7MmdqUsEvH93QThbL+PcBwIhm51VOg9A==
+"@dynamic-labs/ethers-v6@^2.0.0":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-2.0.7.tgz#558b033b69e0ec1c17f4b90389a5a0f02ae7bb6c"
+  integrity sha512-9o+JMbuN8ttPG0ZVmaktatarIcCROhRI2lbKdBydvlkMJ5bTLuQhqinrwkHE00JPk0RzRhbr0zYa9OONpd0K4w==
   dependencies:
-    "@dynamic-labs/wallet-connector-core" "1.4.0"
+    "@dynamic-labs/wallet-connector-core" "2.0.7"
 
 "@dynamic-labs/iconic@1.4.0":
   version "1.4.0"
@@ -636,6 +636,11 @@
     "@dynamic-labs/types" "1.4.0"
     "@solana/web3.js" "1.70.1"
     starknet "5.25.0"
+
+"@dynamic-labs/sdk-api-core@0.0.418":
+  version "0.0.418"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/sdk-api-core/-/sdk-api-core-0.0.418.tgz#361e4cb97bb878b9f810d506c5029d0cb35cea5f"
+  integrity sha512-/EolcqEV0hKtQbld61rXFd4+UB59aE3a+O32G+qp6+eFIZi3y9rxJ2FVFnnZOnqOqETk5Gpc0k0UBVp7Mq4WqQ==
 
 "@dynamic-labs/sdk-api@0.0.387":
   version "0.0.387"
@@ -724,6 +729,13 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-1.4.0.tgz#ef760b94b63f59441c49f1cfea8fce23d81a3668"
   integrity sha512-RnILO62J0hUFW8S2NYtqUSiObBywUzXwftfbHeeNWjQbJJ2O+SuxFFuNNTBuE8LXeUbfU8FQ9J1q2hj12f1OFg==
+
+"@dynamic-labs/wallet-connector-core@2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-2.0.7.tgz#6c286263f27acab933fe82f7f325c25621b1babb"
+  integrity sha512-A9TNiZNSZHsyGGmaSYl9n2fuBd7QAsvvZ7xtXg/TnTJIBstH43yCKzTA/EN8yS3VA8ScOTjdixhgc4SleipWaA==
+  dependencies:
+    "@dynamic-labs/sdk-api-core" "0.0.418"
 
 "@emmetio/abbreviation@^2.3.3":
   version "2.3.3"
