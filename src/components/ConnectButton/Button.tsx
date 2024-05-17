@@ -37,6 +37,8 @@ export default ({ chainId }: { chainId: number }) => {
 
 	console.log({ dynamic })
 
+	const loggedIn = useMemo(() => dynamic?.user !== undefined, [dynamic?.user])
+
 	useEffect(() => {
 		const cryptoWallet = dynamic.user?.verifiedCredentials.find(
 			(c) => c.format === 'blockchain',
@@ -78,9 +80,9 @@ export default ({ chainId }: { chainId: number }) => {
 
 	return (
 		<div className="relative grid grid-flow-col items-center gap-1">
-			{isUnexpectedNetwork && <NetworkError chainId={chainId} />}
+			{loggedIn && isUnexpectedNetwork && <NetworkError chainId={chainId} />}
 			<DynamicWidget />
-			{isWalletNeeded && walletName && (
+			{loggedIn && isWalletNeeded && walletName && (
 				<button
 					onClick={() => openWallet(walletName)}
 					className="hs-button is-small is-filled"
