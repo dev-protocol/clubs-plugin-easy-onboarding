@@ -1,6 +1,12 @@
 ---
 import type { AwesomeOnboardingOptions } from '../types.ts'
-import BrowserConnectButton_ from './ConnectButton/BrowserConnectButton.tsx'
+
+/**
+ * ORIGINAL SOURCE is ./Entry/Entry.tsx
+ * We are pre-building the dependencies because the major packages are using
+ * a package that has many dependencies that may not build successfully.
+ */
+import BrowserConnectButton_ from '../.build/Entry/Entry'
 
 const props = Astro.props as AwesomeOnboardingOptions
 
@@ -14,8 +20,15 @@ const { PUBLIC_DYNAMIC_ENVIRONMENT_ID } = import.meta.env
 	}
 </script>
 
-<BrowserConnectButton_
-	client:load
-	{...props}
-	environmentId={PUBLIC_DYNAMIC_ENVIRONMENT_ID}
-/>
+<span class="group relative min-w-32 min-h-12">
+	<span
+		title="Loading the wallet..."
+		class="group-has-[astro-island:not([ssr])]:hidden absolute inset-0 rounded-xl animate-pulse bg-black/10"
+	></span>
+
+	<BrowserConnectButton_
+		client:only="react"
+		{...props}
+		environmentId={PUBLIC_DYNAMIC_ENVIRONMENT_ID}
+	/>
+</span>

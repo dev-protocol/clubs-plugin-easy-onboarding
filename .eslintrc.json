@@ -33,7 +33,7 @@
 			}
 		},
 		{
-			"files": ["rollup.config.js"],
+			"files": ["rollup.*.js"],
 			"rules": {
 				"functional/prefer-immutable-types": "off",
 				"functional/no-conditional-statements": "off"
