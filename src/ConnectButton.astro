@@ -1,12 +1,12 @@
 ---
-import type { AwesomeOnboardingOptions } from '../types.ts'
+import type { AwesomeOnboardingOptions } from './types.ts'
 
 /**
  * ORIGINAL SOURCE is ./Entry/Entry.tsx
  * We are pre-building the dependencies because the major packages are using
  * a package that has many dependencies that may not build successfully.
  */
-import BrowserConnectButton_ from '../.build/Entry/Entry'
+import BrowserConnectButton_ from './.build/Entry/Entry'
 
 const props = Astro.props as AwesomeOnboardingOptions
 

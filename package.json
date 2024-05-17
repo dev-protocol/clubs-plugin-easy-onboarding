@@ -14,7 +14,11 @@
 		"dist/*.d.ts",
 		"dist/*.js",
 		"!**/*.test.*",
-		"src"
+		"src/**/*.astro",
+		"src/*.ts",
+		"src/*.md",
+		"src/.build",
+		"!src/.build/src"
 	],
 	"keywords": [
 		"clubs-plugin"
