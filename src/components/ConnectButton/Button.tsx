@@ -59,6 +59,7 @@ export default ({ chainId }: { chainId: number }) => {
 	}, [dynamic.primaryWallet, dynamic.user])
 
 	useEffect(() => {
+		if (dynamic.network === undefined) return
 		const connectedChain = Number(dynamic.network)
 		setUnexpectedNetwork(connectedChain !== chainId)
 	}, [dynamic.network])

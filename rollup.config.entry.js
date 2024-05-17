@@ -19,7 +19,11 @@ export default [
 				format: 'es',
 			},
 		],
-		plugins: [nodeResolve({ browser: true }), commonjs(), json()],
+		plugins: [
+			nodeResolve({ browser: true, preferBuiltins: true }),
+			commonjs(),
+			json(),
+		],
 	},
 	{
 		input: 'src/.build/src/components/Entry/Entry.js',
