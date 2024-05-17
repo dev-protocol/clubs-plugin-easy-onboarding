@@ -14,8 +14,7 @@
 		".preview",
 		"config.js",
 		"rollup.config.js",
-		"rollup.config.ui.js",
-		"rollup.config.translation.js",
+		"rollup.config.entry.js",
 		"tailwind.config.js"
 	]
 }

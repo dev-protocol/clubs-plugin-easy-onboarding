@@ -6,7 +6,7 @@ import type {
 } from '@devprotocol/clubs-core'
 
 import Readme from './readme.astro'
-import ConnectButton from './components/ConnectButton.astro'
+import ConnectButton from './ConnectButton.astro'
 
 export const getSlots = (async (_, { chainId, rpcUrl }) => {
 	return [

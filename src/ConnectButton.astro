@@ -1,0 +1,34 @@
+---
+import type { AwesomeOnboardingOptions } from './types.ts'
+
+/**
+ * ORIGINAL SOURCE is src/components/Entry/Entry.tsx
+ * We are pre-building the dependencies because the major packages are using
+ * a package that has many dependencies that may not build successfully.
+ */
+import BrowserConnectButton_ from './.build/Entry/Entry'
+
+const props = Astro.props as AwesomeOnboardingOptions
+
+const { PUBLIC_DYNAMIC_ENVIRONMENT_ID } = import.meta.env
+---
+
+<script>
+	// @dynamic-labs/iconic, a package what @dynamic-labs/sdk-react-core is required, is requiring `process` on the frontend.
+	if (typeof window.process === 'undefined') {
+		;(window as any).process = { env: {} }
+	}
+</script>
+
+<span class="group relative min-w-32 min-h-10">
+	<span
+		title="Loading the wallet..."
+		class="group-has-[astro-island:not([ssr])]:hidden absolute inset-0 rounded-xl animate-pulse bg-black/10"
+	></span>
+
+	<BrowserConnectButton_
+		client:only="react"
+		{...props}
+		environmentId={PUBLIC_DYNAMIC_ENVIRONMENT_ID}
+	/>
+</span>

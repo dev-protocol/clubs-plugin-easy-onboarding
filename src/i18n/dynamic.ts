@@ -29,7 +29,7 @@ export const Japanese = {
 	/**
 	 * Dynamic says...
 	 * > We just support “en” for now, so that will be the only valid key for the LocaleResource object.
-	 * > https://docs.dynamic.xyz/guides/customizing-copy
+	 * > https://docs.dynamic.xyz/react-sdk/references/locale
 	 * So, it needs to assign Japanese translation as English.
 	 */
 	en: ResourceJapanese,

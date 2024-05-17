@@ -8,10 +8,7 @@ import type { UndefinedOr } from '@devprotocol/util-ts'
 import { EthersExtension } from '@dynamic-labs/ethers-v6'
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
-import {
-	DynamicContextProvider,
-	DynamicWidgetContextProvider,
-} from '@dynamic-labs/sdk-react-core'
+import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core'
 
 import Button from './Button'
 import { Japanese } from '../../i18n/dynamic'
@@ -40,11 +37,9 @@ export default ({ chainId = 137, environmentId }: ConnectButtonProps) => {
 			}}
 			locale={locale}
 		>
-			<DynamicWidgetContextProvider>
-				<Button />
-			</DynamicWidgetContextProvider>
+			<Button chainId={chainId} />
 		</DynamicContextProvider>
 	) : (
-		<div className="hs-button is-filled w-48 min-h-[3rem] animate-pulse rounded-xl bg-gray-500/60" />
+		<div className="min-w-32 min-h-10 rounded-xl animate-pulse bg-black/10" />
 	)
 }

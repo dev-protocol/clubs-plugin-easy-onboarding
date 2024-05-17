@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"outDir": "src/.build",
+		"rootDir": ".",
+		"declaration": true,
+		"skipLibCheck": true,
+		"moduleResolution": "Bundler",
+		"jsx": "react-jsx"
+	},
+	"include": ["src/components/Entry/Entry.tsx"]
+}
