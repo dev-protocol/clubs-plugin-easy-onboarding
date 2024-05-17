@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-conditional-statements */
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statements */
 /* eslint-disable functional/no-return-void */
@@ -13,15 +14,17 @@ import {
 	useDynamicContext,
 	useWalletItemActions,
 } from '@dynamic-labs/sdk-react-core'
+import NetworkError from './NetworkError'
 
 import { Strings } from '../../i18n/plugin'
 
-export default () => {
+export default ({ chainId }: { chainId: number }) => {
 	const dynamic = useDynamicContext()
 	const [connection, setConnection] = useState<ReturnType<typeof Connection>>()
 	const [signer, setSigner] = useState<Signer>()
 	const [walletName, setWalletName] = useState<string>()
 	const [isWalletNeeded, setIsWalletNeeded] = useState<boolean>(false)
+	const [isUnexpectedNetwork, setUnexpectedNetwork] = useState<boolean>(false)
 
 	const { openWallet } = useWalletItemActions()
 
@@ -41,6 +44,11 @@ export default () => {
 
 		// eslint-disable-next-line functional/no-conditional-statements
 		if (cryptoWallet) {
+			/**
+			 * If a user initially logged in using their wallet and later connected a social account,
+			 * Dynamic will not function as a wallet for subsequent logins using the social account as the first step.
+			 * Therefore, in that case, users need to connect their wallet after the social account.
+			 */
 			setIsWalletNeeded(Boolean(!dynamic.primaryWallet))
 			setWalletName(cryptoWallet.walletName)
 		}
@@ -49,6 +57,11 @@ export default () => {
 			setSigner(_signer)
 		})
 	}, [dynamic.primaryWallet, dynamic.user])
+
+	useEffect(() => {
+		const connectedChain = Number(dynamic.network)
+		setUnexpectedNetwork(connectedChain !== chainId)
+	}, [dynamic.network])
 
 	useEffect(() => {
 		import('@devprotocol/clubs-core/connection').then((C) => {
@@ -63,7 +76,8 @@ export default () => {
 	}, [signer, connection])
 
 	return (
-		<div className="grid gap-1">
+		<div className="relative grid grid-flow-col items-center gap-1">
+			{isUnexpectedNetwork && <NetworkError chainId={chainId} />}
 			<DynamicWidget />
 			{isWalletNeeded && walletName && (
 				<button

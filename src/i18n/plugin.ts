@@ -5,4 +5,22 @@ export const Strings = {
 		en: 'Connect your wallet',
 		ja: 'ウォレットにも接続してください',
 	},
+	SwitchChain: {
+		en: ([chain]) => `Switch to
+    ${
+			chain === '137'
+				? 'Polygon'
+				: chain === '1'
+					? 'Ethereum'
+					: `Chain#${chain}`
+		}`,
+		ja: ([chain]) => `
+    ${
+			chain === '137'
+				? 'Polygon'
+				: chain === '1'
+					? 'Ethereum'
+					: `Chain#${chain}`
+		} に切り替えください`,
+	},
 } satisfies ClubsI18nParts
