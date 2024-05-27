@@ -33,4 +33,5 @@ export default {
 	meta,
 } satisfies ClubsFunctionPlugin
 
+export { ConnectButton }
 export * from './types'
