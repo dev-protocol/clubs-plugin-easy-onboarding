@@ -54,7 +54,7 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/vue": "^4.2.0",
 		"@ava/typescript": "5.0.0",
-		"@devprotocol/clubs-core": "3.12.8",
+		"@devprotocol/clubs-core": "3.12.9",
 		"@devprotocol/elements": "^1.1.0",
 		"@devprotocol/util-ts": "4.0.0",
 		"@dynamic-labs/ethereum": "^2.0.7",
