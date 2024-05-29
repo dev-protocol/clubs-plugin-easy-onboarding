@@ -98,6 +98,7 @@ const ResourceJapanese = {
 	},
 } satisfies LocaleResource['ja']
 
+
 export const Japanese = {
 	/**
 	 * Dynamic says...
