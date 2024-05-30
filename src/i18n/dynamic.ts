@@ -5,7 +5,7 @@ import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 const ResourceJapanese = {
 	dyn_login: {
 		title: {
-			all: 'ログイン',
+			all: 'サインイン',
 			all_wallet_list: 'あなたのウォレット',
 			wallet_only: 'あなたのウォレット',
 		},
@@ -18,7 +18,7 @@ const ResourceJapanese = {
 		},
 	},
 	dyn_widget: {
-		connect: 'ログイン',
+		connect: 'サインイン',
 	},
 	dyn_wallet_list: {
 		view_all: 'すべてのウォレットを見る',
