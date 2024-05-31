@@ -52,7 +52,7 @@ const ResourceJapanese = {
 		title: 'Access denied',
 	},
 	dyn_collect_user_data: {
-		description: 'We need a bit of information to get started',
+		description: '以下の空欄にメールアドレスを入力してください ',
 		fields: {
 			alias: {
 				label: 'Alias',
@@ -92,8 +92,8 @@ const ResourceJapanese = {
 				validation: 'Username is not valid',
 			},
 		},
-		greeting: 'Welcome to {{appName}}',
-		log_out_button: 'Log out',
+		greeting: '{{appName}}へようこそ',
+		log_out_button: 'ログアウト',
 		not_supported_network: {
 			description:
 				'Your wallet is not connected to a supported network. Please update before continuing.',
@@ -108,7 +108,7 @@ const ResourceJapanese = {
 			'You can only edit 1 field at a time that requires verification',
 	},
 	dyn_create_password: {
-		continue: 'Continue',
+		continue: '続ける',
 		create_input: {
 			label: 'Create passcode',
 			placeholder: 'Create passcode',
@@ -148,7 +148,7 @@ const ResourceJapanese = {
 			},
 			title: 'Add a Passcode',
 		},
-		logout: 'Log out',
+		logout: 'ログアウト',
 		title: {
 			create: 'Create passcode',
 			update: 'Create new passcode',
@@ -362,7 +362,7 @@ const ResourceJapanese = {
 	},
 	dyn_passkey_intro: {
 		button: 'Set up a passkey',
-		button_logout: 'Log out',
+		button_logout: 'ログアウト',
 		button_skip: 'Skip for now',
 		disabled:
 			'Passkeys are not available on this device or browser. Please open on Chrome, Safari, or Brave to continue',
@@ -610,7 +610,7 @@ const ResourceJapanese = {
 		subtitle:
 			"We couldn't connect to your wallet. Click connect to retry the connection ",
 		connect: 'Connect wallet',
-		logout: 'Log out',
+		logout: 'ログアウト',
 	},
 	dyn_sign_message: {
 		cancel_button: 'キャンセル',
@@ -688,7 +688,7 @@ const ResourceJapanese = {
 			warning:
 				'Linking your wallet to this account will unlink it from its previously associated account',
 		},
-		log_out_button: 'Log out',
+		log_out_button: 'ログアウト',
 		title: 'Transfer this wallet?',
 	},
 	dyn_send_transaction: {
@@ -775,7 +775,7 @@ const ResourceJapanese = {
 		},
 		description: 'You must retain a copy of this passcode.',
 		download_button: 'Download',
-		logout: 'Log out',
+		logout: 'ログアウト',
 		password_input: {
 			label: 'Passcode',
 			placeholder: 'Passcode',
