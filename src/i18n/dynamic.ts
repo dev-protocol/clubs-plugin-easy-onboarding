@@ -473,6 +473,81 @@ const ResourceJapanese = {
 			submit_button: { label: '次へ' },
 		},
 	},
+	dyn_login: {
+		connect_wallet: {
+			title: 'Connect',
+		},
+		email_form: {
+			email_field: {
+				label: 'Enter your email',
+			},
+			submit_button: {
+				label: 'Continue',
+			},
+		},
+		email_or_phone: {
+			use_email: 'Use email',
+			use_phone: 'Use phone',
+			prefer_email: 'Prefer email sign up?',
+			prefer_phone: 'Prefer phone number sign up?',
+		},
+		helper: {
+			all_wallet_list: 'Get your first wallet',
+			email_form: {
+				invalid_email: 'Invalid or incorrect email. Did you mistype it?',
+			},
+			phone_number_form: {
+				invalid_phone: 'Invalid or incorrect number. Did you mistype it?',
+				invalid_sms_verification:
+					'The code you entered is incorrect. Please try again.',
+				too_many_sms_verification_attempts:
+					'Too many verification attempts, please try again later.',
+			},
+			pending_connect: {
+				title: 'Connecting a wallet',
+			},
+			pending_signature: {
+				title: 'Signing a wallet',
+			},
+			pending_signature_without_back_button: {
+				title: 'Signing a wallet',
+			},
+			qr_code: {
+				title: 'Connecting a wallet',
+			},
+			wallet_only: 'Get your first wallet',
+		},
+		qr_code: {
+			title: 'Connect',
+		},
+		separators: {
+			default: 'OR',
+		},
+		sign_wallet: {
+			title: 'Sign',
+		},
+		title: {
+			all: 'Log in or sign up',
+			all_wallet_list: 'Select your wallet',
+			wallet_only: 'Select your wallet',
+		},
+		wallet_group: {
+			title: 'Select Chain',
+		},
+		select_wallet_in_wallet_group: {
+			title: 'Select',
+		},
+		wallet_list: {
+			button_only: 'Continue with a wallet',
+		},
+		wrong_social_account: {
+			retry_button: 'Try again',
+			retry_title: 'Please connect with: ',
+			subtitle:
+				'You must connect with the same account you originally signed in with.',
+			title: 'Whoops. Wrong Account',
+		},
+	},
 	dyn_widget: {
 		connect: 'サインイン',
 	},
