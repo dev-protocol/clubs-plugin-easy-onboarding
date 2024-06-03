@@ -6,7 +6,7 @@
 
 import type { Signer } from 'ethers'
 import { useEffect, useMemo, useState } from 'react'
-import { whenDefinedAll } from '@devprotocol/util-ts'
+import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import { i18nFactory } from '@devprotocol/clubs-core'
 import type { connection as Connection } from '@devprotocol/clubs-core/connection'
 import {
@@ -68,9 +68,22 @@ export default ({ chainId }: { chainId: number }) => {
 		const connectedChain = Number(dynamic.network)
 		setUnexpectedNetwork(connectedChain !== chainId)
 		whenDefinedAll([connection], ([_connection]) =>
-			_connection.chain.next(dynamic.network),
+			_connection.chain.next(Number(dynamic.network)),
 		)
 	}, [dynamic.network])
+
+	const emailCredential = dynamic.user?.verifiedCredentials?.find(
+		(c) => c.format === 'email',
+	)
+	useEffect(() => {
+		whenDefinedAll([connection], ([_connection]) =>
+			_connection.identifiers.next(
+				whenDefined(emailCredential?.publicIdentifier, (email) => ({
+					email,
+				})),
+			),
+		)
+	}, [emailCredential])
 
 	useEffect(() => {
 		import('@devprotocol/clubs-core/connection').then((C) => {

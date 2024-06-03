@@ -6,6 +6,7 @@ import { onMounted, ref } from 'vue'
 const account = ref<string>()
 const chain = ref<number>()
 const signature = ref<string>()
+const email = ref<string>()
 
 let signer: UndefinedOr<Signer>
 
@@ -29,6 +30,10 @@ onMounted(async () => {
 		console.log({ _signer })
 		signer = _signer
 	})
+	connection().identifiers.subscribe((_ids) => {
+		console.log({ _ids })
+		email.value = _ids?.email
+	})
 })
 </script>
 
@@ -36,6 +41,8 @@ onMounted(async () => {
 	<div class="grid gap-3">
 		<h2 class="font-bold">Account</h2>
 		<p>{{ account ?? '(none)' }}</p>
+		<h2 class="font-bold">Email</h2>
+		<p>{{ email ?? '(none)' }}</p>
 		<h2 class="font-bold">Chain</h2>
 		<p>{{ chain ?? '(none)' }}</p>
 		<h2 class="font-bold">Signing</h2>
