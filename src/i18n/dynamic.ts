@@ -31,16 +31,16 @@ const ResourceJapanese = {
 			title: 'Connect to {{appName}}',
 		},
 		widget: {
-			address: 'Copy wallet address',
-			connect: 'Connect wallet',
-			connect_with_network: 'Connect {{blockchainName}} wallet',
+			address: 'ウォレットアドレス',
+			connect: 'ウォレットを接続する',
+			connect_with_network: 'ウォレットを {{blockchainName}} に接続する',
 			copy: {
-				address: 'Copy wallet address',
-				ens: 'Copy ENS',
+				address: 'ウォレットアドレスをコピー',
+				ens: 'ENSをコピー',
 			},
-			disconnect: 'Disconnect',
-			edit_profile: 'Edit profile',
-			wallet_network: '{{networkName}} wallet',
+			disconnect: '切断',
+			edit_profile: 'プロフィールを編集',
+			wallet_network: 'ネットワーク： {{networkName}}',
 		},
 	},
 	dyn_captcha: {
@@ -61,8 +61,8 @@ const ResourceJapanese = {
 				label: 'Country',
 			},
 			email: {
-				label: 'Email',
-				validation: 'Email is not valid',
+				label: 'メールアドレス',
+				validation: 'このメールアドレスは無効です',
 			},
 			first_name: {
 				label: 'First Name',
@@ -301,14 +301,14 @@ const ResourceJapanese = {
 		title: 'Wallet settings',
 	},
 	dyn_merge_user_accounts: {
-		cancel_button: "No, I'll use a different email",
-		confirm_button: 'Yes, link to existing account',
+		cancel_button: "別のメールアドレスを使う",
+		confirm_button: '現在のアカウントにリンクする',
 		errors: {
-			merge_error: 'Something went wrong, please try again.',
+			merge_error: 'エラーが発生しました。もう一度やり直してください。',
 		},
-		existing_account: 'An account already exists that uses',
-		existing_account_trail: 'email.',
-		title: 'Would you like to link this wallet to this existing account?',
+		existing_account: '既に現在使用しているアカウントです',
+		existing_account_trail: 'メールアドレス',
+		title: 'このウォレットを現在のアカウントにリンクさせますか',
 	},
 	dyn_need_help_section: {
 		info: 'Problem Signing?',
@@ -411,7 +411,7 @@ const ResourceJapanese = {
 	dyn_wallet_transfer: {
 		sign: {
 			spinner: {
-				cancel: 'Cancel',
+				cancel: 'キャンセル',
 				confirm_transfer:
 					'Sign the message to confirm transferring this wallet to this account.',
 			},
@@ -568,13 +568,13 @@ const ResourceJapanese = {
 			title: 'メールを確認してください',
 			edit: 'メールの編集',
 			complete:
-				'検証が完了しました。メールはこのアカウントに対して検証されました。',
+				'認証が完了しました。メールアドレスはこのアカウントに対して認証されました。',
 		},
 		phone_number: {
 			title: '電話番号を確認してください',
 			edit: '電話番号を編集する',
 			complete:
-				'認証が完了しました。電話番号がこのアカウントに対して認証されました。',
+				'認証が完了しました。電話番号はこのアカウントに対して認証されました。',
 		},
 	},
 	dyn_pending_connection: {
