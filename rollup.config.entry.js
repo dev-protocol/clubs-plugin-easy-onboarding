@@ -7,6 +7,7 @@ import json from '@rollup/plugin-json'
 const external = [
 	...Object.keys(packageJson.dependencies),
 	...Object.keys(packageJson.peerDependencies),
+	'@devprotocol/clubs-core/connection',
 ]
 
 export default [

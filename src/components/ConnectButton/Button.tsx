@@ -72,10 +72,11 @@ export default ({ chainId }: { chainId: number }) => {
 		)
 	}, [dynamic.network])
 
-	const emailCredential = dynamic.user?.verifiedCredentials?.find(
-		(c) => c.format === 'email',
-	)
 	useEffect(() => {
+		const emailCredential = dynamic.user?.verifiedCredentials?.find(
+			(c) => c.format === 'email',
+		)
+		console.log('**', { emailCredential })
 		whenDefinedAll([connection], ([_connection]) =>
 			_connection.identifiers.next(
 				whenDefined(emailCredential?.publicIdentifier, (email) => ({
@@ -83,7 +84,7 @@ export default ({ chainId }: { chainId: number }) => {
 				})),
 			),
 		)
-	}, [emailCredential])
+	}, [dynamic.user])
 
 	useEffect(() => {
 		import('@devprotocol/clubs-core/connection').then((C) => {
