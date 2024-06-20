@@ -123,20 +123,22 @@ export default ({
 	}, [signer, connection])
 
 	return (
-		<span className="group relative flex flex-col">
+		<span className="group relative block">
 			{loggedIn && isUnexpectedNetwork && (
 				<NetworkError chainId={chainId ?? 137} />
 			)}
 			{dynamic?.primaryWallet?.address && (
-				<a
-					className="hs-button is-small text-xs is-fullwidth pt-4 is-filled flex gap-2 delay-300 opacity-0 group-hover:opacity-100 group-hover:-bottom-1/2 absolute left-1/2 bottom-0 -translate-x-1/2"
-					href={`https://clubs.place/passport/${dynamic.primaryWallet.address}`}
-					target="_blank"
-					rel="noreferrer noopener"
-				>
-					<Clubs size={4} />
-					Passport
-				</a>
+				<span className="block w-full transition-all delay-300 opacity-0 group-hover:opacity-100 group-hover:-bottom-1/2 absolute left-1/2 bottom-0 -translate-x-1/2">
+					<a
+						className="hs-button is-small text-xs is-fullwidth pt-4 is-filled flex gap-2"
+						href={`https://clubs.place/passport/${dynamic.primaryWallet.address}`}
+						target="_blank"
+						rel="noreferrer noopener"
+					>
+						<Clubs size={4} />
+						Passport
+					</a>
+				</span>
 			)}
 
 			<button
