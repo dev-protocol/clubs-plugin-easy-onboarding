@@ -19,7 +19,15 @@ import { equals } from 'ramda'
 
 import { Strings } from '../../i18n/plugin'
 
-export default ({ chainId }: { chainId: number }) => {
+export default ({
+	chainId,
+	buttonClassName,
+	buttonContainerClassName,
+}: {
+	chainId: number
+	buttonClassName?: string
+	buttonContainerClassName?: string
+}) => {
 	const dynamic = useDynamicContext()
 	const [connection, setConnection] = useState<ReturnType<typeof Connection>>()
 	const [signer, setSigner] = useState<Signer>()
@@ -102,7 +110,10 @@ export default ({ chainId }: { chainId: number }) => {
 	return (
 		<div className="relative grid grid-flow-col items-center gap-1">
 			{loggedIn && isUnexpectedNetwork && <NetworkError chainId={chainId} />}
-			<DynamicWidget />
+			<DynamicWidget
+				buttonClassName={buttonClassName}
+				buttonContainerClassName={buttonContainerClassName}
+			/>
 			{loggedIn && isWalletNeeded && walletName && (
 				<button
 					onClick={() => openWallet(walletName)}

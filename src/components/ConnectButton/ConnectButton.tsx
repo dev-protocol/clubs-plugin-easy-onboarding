@@ -16,7 +16,12 @@ import type { ConnectButtonProps } from '../../types'
 
 const langs = ['en', 'ja']
 
-export default ({ chainId = 137, environmentId }: ConnectButtonProps) => {
+export default ({
+	chainId = 137,
+	environmentId,
+	buttonClassName,
+	buttonContainerClassName,
+}: ConnectButtonProps) => {
 	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
 
 	useEffect(() => {
@@ -37,7 +42,11 @@ export default ({ chainId = 137, environmentId }: ConnectButtonProps) => {
 			}}
 			locale={locale}
 		>
-			<Button chainId={chainId} />
+			<Button
+				chainId={chainId}
+				buttonClassName={buttonClassName}
+				buttonContainerClassName={buttonContainerClassName}
+			/>
 		</DynamicContextProvider>
 	) : (
 		<div className="min-w-32 min-h-10 rounded-xl animate-pulse bg-black/10" />
