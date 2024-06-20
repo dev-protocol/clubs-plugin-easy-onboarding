@@ -10,7 +10,7 @@ import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import { i18nFactory } from '@devprotocol/clubs-core'
 import type { connection as Connection } from '@devprotocol/clubs-core/connection'
 import {
-	DynamicWidget,
+	DynamicUserProfile,
 	useDynamicContext,
 	useWalletItemActions,
 } from '@dynamic-labs/sdk-react-core'
@@ -21,12 +21,12 @@ import { Strings } from '../../i18n/plugin'
 
 export default ({
 	chainId,
+	overrideClass,
 	buttonClassName,
-	buttonContainerClassName,
 }: {
-	chainId: number
+	chainId?: number
+	overrideClass?: string
 	buttonClassName?: string
-	buttonContainerClassName?: string
 }) => {
 	const dynamic = useDynamicContext()
 	const [connection, setConnection] = useState<ReturnType<typeof Connection>>()
@@ -34,6 +34,7 @@ export default ({
 	const [walletName, setWalletName] = useState<string>()
 	const [isWalletNeeded, setIsWalletNeeded] = useState<boolean>(false)
 	const [isUnexpectedNetwork, setUnexpectedNetwork] = useState<boolean>(false)
+	const [profile, setProfile] = useState<{ username: string; avatar: string }>()
 
 	const { openWallet } = useWalletItemActions()
 
@@ -74,7 +75,9 @@ export default ({
 	useEffect(() => {
 		if (dynamic.network === undefined) return
 		const connectedChain = Number(dynamic.network)
-		setUnexpectedNetwork(connectedChain !== chainId)
+		setUnexpectedNetwork(
+			typeof chainId === 'number' && connectedChain !== chainId,
+		)
 		whenDefinedAll([connection], ([_connection]) =>
 			_connection.chain.next(Number(dynamic.network)),
 		)
@@ -101,6 +104,17 @@ export default ({
 	}, [])
 
 	useEffect(() => {
+		const eoa = dynamic?.primaryWallet?.address
+		if (eoa) {
+			fetch(`https://clubs.place/api/profile/${eoa}`)
+				.then((res) => res.json())
+				.then(setProfile)
+		} else {
+			setProfile(undefined)
+		}
+	}, [dynamic?.primaryWallet?.address])
+
+	useEffect(() => {
 		whenDefinedAll([connection], ([_connection]) => {
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
@@ -108,20 +122,64 @@ export default ({
 	}, [signer, connection])
 
 	return (
-		<div className="relative grid grid-flow-col items-center gap-1">
-			{loggedIn && isUnexpectedNetwork && <NetworkError chainId={chainId} />}
-			<DynamicWidget
-				buttonClassName={buttonClassName}
-				buttonContainerClassName={buttonContainerClassName}
-			/>
-			{loggedIn && isWalletNeeded && walletName && (
-				<button
-					onClick={() => openWallet(walletName)}
-					className="hs-button is-small is-filled"
-				>
-					{i18n('PleaseConnectWallet')}
-				</button>
+		<span className="relative block">
+			{loggedIn && isUnexpectedNetwork && (
+				<NetworkError chainId={chainId ?? 137} />
 			)}
-		</div>
+
+			<button
+				className={`${
+					overrideClass
+						? overrideClass
+						: 'hs-button is-filled is-large is-fullwidth relative data-[is-loading=true]:animate-pulse'
+				} ${loggedIn && isUnexpectedNetwork ? 'is-error' : ''} ${buttonClassName}`}
+				onClick={() =>
+					loggedIn
+						? isWalletNeeded && walletName
+							? openWallet(walletName)
+							: dynamic.setShowDynamicUserProfile(true)
+						: dynamic.setShowAuthFlow(true)
+				}
+			>
+				{loggedIn && profile ? (
+					<span className="flex gap-2 items-center">
+						<img
+							src={profile.avatar}
+							className="rounded-full w-6 h-6 object-cover"
+						/>
+						<span className="font-bold text-inherit">{profile.username}</span>
+					</span>
+				) : loggedIn && isWalletNeeded ? (
+					i18n('PleaseConnectWallet')
+				) : loggedIn ? (
+					<span
+						title="Loading the profile..."
+						className="w-full min-w-24 h-6 rounded-xl animate-pulse bg-gray-500/60"
+					></span>
+				) : (
+					i18n('SignIn')
+				)}
+			</button>
+			<DynamicUserProfile />
+		</span>
 	)
+
+	/* Using <DynamicWidget /> */
+	// return (
+	// 	<div className="relative grid grid-flow-col items-center gap-1">
+	// 		{loggedIn && isUnexpectedNetwork && <NetworkError chainId={chainId} />}
+	// 		<DynamicWidget
+	// 			buttonClassName={buttonClassName}
+	// 			buttonContainerClassName={buttonContainerClassName}
+	// 		/>
+	// 		{loggedIn && isWalletNeeded && walletName && (
+	// 			<button
+	// 				onClick={() => openWallet(walletName)}
+	// 				className="hs-button is-small is-filled"
+	// 			>
+	// 				{i18n('PleaseConnectWallet')}
+	// 			</button>
+	// 		)}
+	// 	</div>
+	// )
 }

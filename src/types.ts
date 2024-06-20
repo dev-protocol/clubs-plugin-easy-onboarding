@@ -1,7 +1,7 @@
 export type AwesomeOnboardingOptions = Readonly<{
 	chainId?: number
 	buttonClassName?: string
-	buttonContainerClassName?: string
+	overrideClassName?: string
 }>
 
 export type AwesomeOnboardingEnvs = Readonly<{

@@ -16,12 +16,7 @@ import type { ConnectButtonProps } from '../../types'
 
 const langs = ['en', 'ja']
 
-export default ({
-	chainId = 137,
-	environmentId,
-	buttonClassName,
-	buttonContainerClassName,
-}: ConnectButtonProps) => {
+export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
 	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
 
 	useEffect(() => {
@@ -36,17 +31,13 @@ export default ({
 		<DynamicContextProvider
 			settings={{
 				environmentId,
-				walletConnectPreferredChains: [`eip155:${chainId}`],
+				walletConnectPreferredChains: [`eip155:${chainId ?? 137}`],
 				walletConnectorExtensions: [EthersExtension],
 				walletConnectors: [EthereumWalletConnectors],
 			}}
 			locale={locale}
 		>
-			<Button
-				chainId={chainId}
-				buttonClassName={buttonClassName}
-				buttonContainerClassName={buttonContainerClassName}
-			/>
+			<Button chainId={chainId} {...props} />
 		</DynamicContextProvider>
 	) : (
 		<div className="min-w-32 min-h-10 rounded-xl animate-pulse bg-black/10" />
