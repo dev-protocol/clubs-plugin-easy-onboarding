@@ -301,7 +301,7 @@ const ResourceJapanese = {
 		title: 'Wallet settings',
 	},
 	dyn_merge_user_accounts: {
-		cancel_button: "別のメールアドレスを使う",
+		cancel_button: '別のメールアドレスを使う',
 		confirm_button: '現在のアカウントにリンクする',
 		errors: {
 			merge_error: 'エラーが発生しました。もう一度やり直してください。',
