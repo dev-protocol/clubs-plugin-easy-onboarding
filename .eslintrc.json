@@ -25,11 +25,13 @@
 		{
 			"files": ["**/*.test.ts"],
 			"rules": {
-				"functional/no-conditional-statements": "off",
+				"functional/no-expression-statement": "off",
 				"functional/functional-parameters": "off",
+				"@typescript-eslint/no-explicit-any": "off",
 				"functional/no-return-void": "off",
 				"@typescript-eslint/prefer-readonly-parameter-types": "off",
-				"@typescript-eslint/no-explicit-any": "off"
+				"functional/no-promise-reject": "off",
+				"functional/no-expression-statements": "off"
 			}
 		},
 		{

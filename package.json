@@ -24,12 +24,12 @@
 		"clubs-plugin"
 	],
 	"scripts": {
-		"test": "ava || echo 'skip'",
+		"test": "vitest",
+		"test:ci": "vitest --run",
 		"preview": "concurrently \"yarn build:entry:tsc --watch\" \"yarn build:entry:rollup --watch\" \"astro --root .preview/preview.static dev\"",
 		"build": "rollup -c && yarn build:entry:tsc && yarn build:entry:rollup",
 		"build:entry:tsc": "tsc --project tsconfig.entry.json",
 		"build:entry:rollup": "rollup -c rollup.config.entry.js",
-		"pretest": "yarn build",
 		"prebuild": "rimraf dist src/.build",
 		"lint": "yarn lint:eslint && yarn lint:format",
 		"lint:eslint": "eslint . --ext=.ts,.js --fix",
@@ -53,7 +53,6 @@
 		"@astrojs/svelte": "^5.4.0",
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/vue": "^4.2.0",
-		"@ava/typescript": "5.0.0",
 		"@devprotocol/clubs-core": "3.14.3",
 		"@devprotocol/util-ts": "4.0.0",
 		"@dynamic-labs/ethereum": "^2.0.7",
@@ -71,7 +70,6 @@
 		"@typescript-eslint/eslint-plugin": "7.13.1",
 		"@typescript-eslint/parser": "7.13.1",
 		"astro": "^4.8.5",
-		"ava": "6.1.3",
 		"concurrently": "^8.2.2",
 		"dotenv": "16.4.5",
 		"eslint": "8.57.0",
@@ -96,19 +94,9 @@
 		"tailwindcss": "3.4.4",
 		"typescript": "5.4.5",
 		"viem": "2",
+		"vitest": "^1.6.0",
 		"vue": "3.4.29",
 		"vue-tsc": "^2.0.19"
-	},
-	"ava": {
-		"files": [
-			"**/*.test.ts"
-		],
-		"typescript": {
-			"rewritePaths": {
-				"/": "dist/"
-			},
-			"compile": false
-		}
 	},
 	"repository": {
 		"type": "git",
