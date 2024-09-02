@@ -21,10 +21,10 @@ const { PUBLIC_DYNAMIC_ENVIRONMENT_ID } = import.meta.env
 	}
 </script>
 
-<span class="group relative min-w-32 min-h-10">
+<span class="group relative min-h-10 min-w-32">
 	<span
 		title="Loading the wallet..."
-		class="group-has-[astro-island:not([ssr])]:hidden absolute inset-0 rounded-xl animate-pulse bg-black/10"
+		class="absolute inset-0 animate-pulse rounded-xl bg-black/10 group-has-[astro-island:not([ssr])]:hidden"
 	></span>
 
 	<BrowserConnectButton_

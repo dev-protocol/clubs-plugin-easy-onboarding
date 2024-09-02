@@ -128,9 +128,9 @@ export default ({
 				<NetworkError chainId={chainId ?? 137} />
 			)}
 			{dynamic?.primaryWallet?.address && (
-				<span className="block w-full transition-all delay-300 opacity-0 group-hover/awesome-onboarding:opacity-100 group-hover/awesome-onboarding:-bottom-1/2 absolute left-1/2 bottom-0 -translate-x-1/2">
+				<span className="absolute bottom-0 left-1/2 block w-full -translate-x-1/2 opacity-0 transition-all delay-300 group-hover/awesome-onboarding:-bottom-1/2 group-hover/awesome-onboarding:opacity-100">
 					<a
-						className="hs-button is-small text-xs is-fullwidth pt-4 is-filled flex gap-2"
+						className="hs-button is-small is-fullwidth is-filled flex gap-2 pt-4 text-xs"
 						href={`https://clubs.place/passport/${dynamic.primaryWallet.address}`}
 						target="_blank"
 						rel="noreferrer noopener"
@@ -156,10 +156,10 @@ export default ({
 				}
 			>
 				{loggedIn && profile ? (
-					<span className="flex gap-2 items-center">
+					<span className="flex items-center gap-2">
 						<img
 							src={profile.avatar}
-							className="rounded-full w-6 h-6 object-cover"
+							className="h-6 w-6 rounded-full object-cover"
 						/>
 						<span className="font-bold text-inherit">{profile.username}</span>
 					</span>
@@ -168,7 +168,7 @@ export default ({
 				) : loggedIn ? (
 					<span
 						title="Loading the profile..."
-						className="w-full min-w-24 h-6 rounded-xl animate-pulse bg-gray-500/60"
+						className="h-6 w-full min-w-24 animate-pulse rounded-xl bg-gray-500/60"
 					></span>
 				) : (
 					i18n('SignIn')

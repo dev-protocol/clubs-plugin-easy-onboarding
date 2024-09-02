@@ -40,6 +40,6 @@ export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
 			<Button chainId={chainId} {...props} />
 		</DynamicContextProvider>
 	) : (
-		<div className="min-w-32 min-h-10 rounded-xl animate-pulse bg-black/10" />
+		<div className="min-h-10 min-w-32 animate-pulse rounded-xl bg-black/10" />
 	)
 }

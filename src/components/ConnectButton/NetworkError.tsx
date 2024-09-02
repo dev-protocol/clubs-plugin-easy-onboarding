@@ -14,14 +14,14 @@ export default ({ chainId }: Readonly<{ chainId: number | string }>) => {
 	)
 
 	return (
-		<span className="absolute top-[100%] -mt-1 w-full rounded-b-lg bg-dp-red-400 p-1 pt-2 text-center text-xs text-white flex items-center justify-center gap-2">
+		<span className="absolute top-[100%] -mt-1 flex w-full items-center justify-center gap-2 rounded-b-lg bg-dp-red-400 p-1 pt-2 text-center text-xs text-white">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				className="w-4 h-4"
+				className="h-4 w-4"
 			>
 				<path
 					stroke-linecap="round"
