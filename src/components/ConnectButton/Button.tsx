@@ -20,6 +20,10 @@ import { equals } from 'ramda'
 import { Strings } from '../../i18n/plugin'
 import Clubs from '../Icon/Clubs'
 
+enum Signal {
+  SignInRequest = 'sign-in-request',
+}
+
 export default ({
 	chainId,
 	overrideClass,
@@ -119,6 +123,13 @@ export default ({
 		whenDefinedAll([connection], ([_connection]) => {
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
+
+      // signal
+      _connection.signal.subscribe((signal) => {
+        if (signal === Signal.SignInRequest) {
+          dynamic.setShowAuthFlow(true)
+        }
+      })
 		})
 	}, [signer, connection])
 
