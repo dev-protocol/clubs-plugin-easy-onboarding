@@ -21,7 +21,7 @@ import { Strings } from '../../i18n/plugin'
 import Clubs from '../Icon/Clubs'
 
 enum Signal {
-  SignInRequest = 'sign-in-request',
+	SignInRequest = 'sign-in-request',
 }
 
 export default ({
@@ -124,12 +124,12 @@ export default ({
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
 
-      // signal
-      _connection.signal.subscribe((signal) => {
-        if (signal === Signal.SignInRequest) {
-          dynamic.setShowAuthFlow(true)
-        }
-      })
+			// signal
+			_connection.signal.subscribe((signal) => {
+				if (signal === Signal.SignInRequest) {
+					dynamic.setShowAuthFlow(true)
+				}
+			})
 		})
 	}, [signer, connection])
 
