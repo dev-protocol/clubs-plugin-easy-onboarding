@@ -7,7 +7,7 @@
 import type { Signer } from 'ethers'
 import { useEffect, useMemo, useState } from 'react'
 import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
-import { i18nFactory } from '@devprotocol/clubs-core'
+import { i18nFactory, Signal } from '@devprotocol/clubs-core'
 import type { connection as Connection } from '@devprotocol/clubs-core/connection'
 import {
 	DynamicUserProfile,
@@ -19,10 +19,6 @@ import { equals } from 'ramda'
 
 import { Strings } from '../../i18n/plugin'
 import Clubs from '../Icon/Clubs'
-
-enum Signal {
-	SignInRequest = 'sign-in-request',
-}
 
 export default ({
 	chainId,

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Signal } from '@devprotocol/clubs-core'
 import type { UndefinedOr } from '@devprotocol/util-ts'
 import type { Signer } from 'ethers'
 import { onMounted, ref } from 'vue'
@@ -45,7 +46,7 @@ const onSignal = async () => {
 	const { connection } = await import('@devprotocol/clubs-core/connection')
 
 	const el = connection()
-	el.signal.next('sign-in-request')
+	el.signal.next(Signal.SignInRequest)
 
 	console.log(el.signal.getValue())
 }
