@@ -7,6 +7,7 @@ const account = ref<string>()
 const chain = ref<number>()
 const signature = ref<string>()
 const email = ref<string>()
+const signal = ref<string>()
 
 let signer: UndefinedOr<Signer>
 
@@ -34,7 +35,20 @@ onMounted(async () => {
 		console.log({ _ids })
 		email.value = _ids?.email
 	})
+	connection().signal.subscribe((_signal) => {
+		console.log({ _signal })
+		signal.value = _signal
+	})
 })
+
+const onSignal = async () => {
+	const { connection } = await import('@devprotocol/clubs-core/connection')
+
+	const el = connection()
+	el.signal.next('sign-in-request')
+
+	console.log(el.signal.getValue())
+}
 </script>
 
 <template>
@@ -51,5 +65,10 @@ onMounted(async () => {
 		</p>
 		<h2 class="font-bold">Signature</h2>
 		<p>{{ signature ?? '(none)' }}</p>
+		<h2 class="font-bold">Signal</h2>
+		<p>
+			<button @click="onSignal" class="hs-button is-filled">Signal</button>
+		</p>
+		<p>{{ signal ?? '(none)' }}</p>
 	</div>
 </template>
