@@ -617,11 +617,11 @@
     stream "0.0.2"
 
 "@dynamic-labs/ethers-v6@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-2.0.7.tgz#558b033b69e0ec1c17f4b90389a5a0f02ae7bb6c"
-  integrity sha512-9o+JMbuN8ttPG0ZVmaktatarIcCROhRI2lbKdBydvlkMJ5bTLuQhqinrwkHE00JPk0RzRhbr0zYa9OONpd0K4w==
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/ethers-v6/-/ethers-v6-2.6.3.tgz#396781885e2cdf5a48346d1583ee0337983eba7c"
+  integrity sha512-WOkyXTmOOX7f5OFwx57b5UI6Rje0Yp9voLXPLgnz+BXkbGcb2WubdkwdAhKlb8J21jR06SKWhlb2w7FSokllXg==
   dependencies:
-    "@dynamic-labs/wallet-connector-core" "2.0.7"
+    "@dynamic-labs/wallet-connector-core" "2.6.3"
 
 "@dynamic-labs/iconic@2.0.7":
   version "2.0.7"
@@ -678,6 +678,11 @@
   version "0.0.418"
   resolved "https://registry.yarnpkg.com/@dynamic-labs/sdk-api-core/-/sdk-api-core-0.0.418.tgz#361e4cb97bb878b9f810d506c5029d0cb35cea5f"
   integrity sha512-/EolcqEV0hKtQbld61rXFd4+UB59aE3a+O32G+qp6+eFIZi3y9rxJ2FVFnnZOnqOqETk5Gpc0k0UBVp7Mq4WqQ==
+
+"@dynamic-labs/sdk-api-core@0.0.510":
+  version "0.0.510"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/sdk-api-core/-/sdk-api-core-0.0.510.tgz#693b2e89db07cd431611c63faa311889a0f611a2"
+  integrity sha512-bUhiHkxbHf5Td2hf/XZRsZXcsSJZvG6QwkJCpg8QFVafJEAL3o9ifYFFRDycwvcVSYEEzBRcy44oCnpdgVUD3Q==
 
 "@dynamic-labs/sdk-react-core@^2.0.7":
   version "2.0.7"
@@ -776,6 +781,13 @@
   integrity sha512-A9TNiZNSZHsyGGmaSYl9n2fuBd7QAsvvZ7xtXg/TnTJIBstH43yCKzTA/EN8yS3VA8ScOTjdixhgc4SleipWaA==
   dependencies:
     "@dynamic-labs/sdk-api-core" "0.0.418"
+
+"@dynamic-labs/wallet-connector-core@2.6.3":
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/@dynamic-labs/wallet-connector-core/-/wallet-connector-core-2.6.3.tgz#45597ffa21315d21e44ebe87fd8f9b347b2323e0"
+  integrity sha512-7B84StUyCcaw/av9r4Xg6NdF1WneGJp9c8wZLaPLm7XFQPZIRfDWAsu0xz+DBSDrN2sz0/7pOxMdwbwm5OhfVA==
+  dependencies:
+    "@dynamic-labs/sdk-api-core" "0.0.510"
 
 "@emmetio/abbreviation@^2.3.3":
   version "2.3.3"
