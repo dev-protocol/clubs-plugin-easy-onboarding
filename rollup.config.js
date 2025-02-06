@@ -28,8 +28,8 @@ const useSrc = ({ out, ext } = {}) => ({
 })
 
 const external = [
-	...Object.keys(packageJson.dependencies),
-	...Object.keys(packageJson.peerDependencies),
+	...Object.keys(packageJson.dependencies ?? {}),
+	...Object.keys(packageJson.peerDependencies ?? {}),
 ]
 
 export default [
