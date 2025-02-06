@@ -1,7 +1,6 @@
 /* eslint-disable functional/no-return-void */
-/* eslint-disable functional/functional-parameters */
+
 /* eslint-disable functional/no-expression-statements */
-/* eslint-disable functional/prefer-immutable-types */
 
 import { useEffect, useState } from 'react'
 import type { UndefinedOr } from '@devprotocol/util-ts'

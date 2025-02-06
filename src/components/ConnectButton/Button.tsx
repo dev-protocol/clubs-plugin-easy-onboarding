@@ -55,7 +55,6 @@ export default ({
 			(c) => c.format === 'blockchain',
 		)
 
-		// eslint-disable-next-line functional/no-conditional-statements
 		if (cryptoWallet) {
 			/**
 			 * If a user initially logged in using their wallet and later connected a social account,
@@ -66,9 +65,13 @@ export default ({
 			setWalletName(cryptoWallet.walletName)
 		}
 
+		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		dynamic.primaryWallet?.connector.ethers?.getSigner().then((_signer) => {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-expect-error
 			const same = equals(_signer, signer)
 			// console.log('Called here', same)
+			// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 			!same && setSigner(_signer)
 		}) ?? setSigner(undefined)
 	}, [dynamic.primaryWallet, dynamic.user])

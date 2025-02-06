@@ -1,5 +1,3 @@
-/* eslint-disable functional/prefer-immutable-types */
-
 import ConnectButton from '../ConnectButton/ConnectButton'
 import type { ConnectButtonProps } from '../../types'
 

@@ -1,6 +1,3 @@
-/* eslint-disable functional/functional-parameters */
-/* eslint-disable functional/prefer-immutable-types */
-
 import { useMemo } from 'react'
 import { Strings } from '../../i18n/plugin'
 import { i18nFactory } from '@devprotocol/clubs-core'
