@@ -19,6 +19,9 @@ import { equals } from 'ramda'
 
 import { Strings } from '../../i18n/plugin'
 import Clubs from '../Icon/Clubs'
+import { scan } from 'rxjs'
+
+const CALLED = '_CALLED_SIGNAL_SUBSCRIBE_'
 
 export default ({
 	chainId,
@@ -122,15 +125,33 @@ export default ({
 		whenDefinedAll([connection], ([_connection]) => {
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
-
-			// signal
-			_connection.signal.subscribe((signal) => {
-				if (signal === Signal.SignInRequest) {
-					dynamic.setShowAuthFlow(true)
-				}
-			})
 		})
 	}, [signer, connection])
+
+	useEffect(() => {
+		whenDefinedAll([connection], ([_connection]) => {
+			// console.log('$$$ Called here', signer)
+
+			// signal
+			const sub = _connection.signal
+				.pipe(scan((total, n) => (n === CALLED ? total + 1 : total), 0))
+				.subscribe((calledCount) => {
+					// Subscribe only once globally
+					if (calledCount === 0) {
+						_connection.signal.next(CALLED)
+						_connection.signal.subscribe((signal) => {
+							if (signal === Signal.SignInRequest) {
+								dynamic.setShowAuthFlow(true)
+							}
+							if (signal === Signal.SignOutRequest) {
+								dynamic.handleLogOut()
+							}
+						})
+						sub.unsubscribe()
+					}
+				})
+		})
+	}, [connection])
 
 	return (
 		<span className="group/awesome-onboarding relative block">

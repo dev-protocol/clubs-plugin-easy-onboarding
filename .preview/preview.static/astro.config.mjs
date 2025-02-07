@@ -9,5 +9,5 @@ import { config } from 'dotenv'
 config({ path: './.env' })
 
 export default defineConfig({
-	integrations: [clubs(), vue(), svelte(), react(), tailwind()],
+	integrations: [clubs(), vue(), react(), tailwind()],
 })

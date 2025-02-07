@@ -42,11 +42,20 @@ onMounted(async () => {
 	})
 })
 
-const onSignal = async () => {
+const onSignalSignIn = async () => {
 	const { connection } = await import('@devprotocol/clubs-core/connection')
 
 	const el = connection()
 	el.signal.next(Signal.SignInRequest)
+
+	console.log(el.signal.getValue())
+}
+
+const onSignalSignOut = async () => {
+	const { connection } = await import('@devprotocol/clubs-core/connection')
+
+	const el = connection()
+	el.signal.next(Signal.SignOutRequest)
 
 	console.log(el.signal.getValue())
 }
@@ -68,7 +77,14 @@ const onSignal = async () => {
 		<p>{{ signature ?? '(none)' }}</p>
 		<h2 class="font-bold">Signal</h2>
 		<p>
-			<button @click="onSignal" class="hs-button is-filled">Signal</button>
+			<button @click="onSignalSignIn" class="hs-button is-filled">
+				Signal to signin
+			</button>
+		</p>
+		<p>
+			<button @click="onSignalSignOut" class="hs-button is-filled">
+				Signal to signout
+			</button>
 		</p>
 		<p>{{ signal ?? '(none)' }}</p>
 	</div>
