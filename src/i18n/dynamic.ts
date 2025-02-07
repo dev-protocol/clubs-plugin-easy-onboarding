@@ -301,14 +301,10 @@ const ResourceJapanese = {
 		title: 'Wallet settings',
 	},
 	dyn_merge_user_accounts: {
-		cancel_button: '別のメールアドレスを使う',
 		confirm_button: '現在のアカウントにリンクする',
 		errors: {
 			merge_error: 'エラーが発生しました。もう一度やり直してください。',
 		},
-		existing_account: '既に現在使用しているアカウントです',
-		existing_account_trail: 'メールアドレス',
-		title: 'このウォレットを現在のアカウントにリンクさせますか',
 	},
 	dyn_need_help_section: {
 		info: 'Problem Signing?',
@@ -566,7 +562,6 @@ const ResourceJapanese = {
 		hang_tight: '準備が整うまでお待ちください',
 		email: {
 			title: 'メールを確認してください',
-			edit: 'メールの編集',
 			complete:
 				'認証が完了しました。メールアドレスはこのアカウントに対して認証されました。',
 		},
