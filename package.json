@@ -48,7 +48,7 @@
 		"@astrojs/svelte": "^6.0.0",
 		"@astrojs/tailwind": "^5.1.0",
 		"@astrojs/vue": "^4.2.0",
-		"@devprotocol/clubs-core": "3.24.3",
+		"@devprotocol/clubs-core": "3.25.2",
 		"@devprotocol/util-ts": "4.0.0",
 		"@dynamic-labs/ethereum": "^2.0.7",
 		"@dynamic-labs/ethers-v6": "^2.0.7",
