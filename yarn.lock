@@ -687,9 +687,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devprotocol/clubs-core@npm:3.24.3":
-  version: 3.24.3
-  resolution: "@devprotocol/clubs-core@npm:3.24.3"
+"@devprotocol/clubs-core@npm:3.25.2":
+  version: 3.25.2
+  resolution: "@devprotocol/clubs-core@npm:3.25.2"
   dependencies:
     "@devprotocol/dev-kit": "npm:8.7.0"
     "@devprotocol/elements": "npm:1.6.0"
@@ -725,6 +725,7 @@ __metadata:
     lit: ^2.3.1 || ^3.0.0
     react: ^18.0.0
     react-dom: ^18.0.0
+    redis: ^4.7.0
     svelte: ^3.49.0 || ^4.0.0 || ^5.0.0
     tailwindcss: ^3.2.4
     vue: ^3.2.0
@@ -737,7 +738,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/7cffb308c7b5ecc5c560be77021c26e0e5cc41943a353e37ceb743ccd4b3e3cf43a25a2f27b4ae1e2d6b859f89ed4c83e445b3ada2958b9837c276d39d2d2624
+  checksum: 10c0/4de00ea20c40cfe8fa7585d7aad7f63f4d7357d35096e7a6694e48f72ed9e6f98209a68c98b8a044beeed8c40fb57255b8eb3203aebe988db7229da96b73c4d7
   languageName: node
   linkType: hard
 
@@ -750,7 +751,7 @@ __metadata:
     "@astrojs/svelte": "npm:^6.0.0"
     "@astrojs/tailwind": "npm:^5.1.0"
     "@astrojs/vue": "npm:^4.2.0"
-    "@devprotocol/clubs-core": "npm:3.24.3"
+    "@devprotocol/clubs-core": "npm:3.25.2"
     "@devprotocol/util-ts": "npm:4.0.0"
     "@dynamic-labs/ethereum": "npm:^2.0.7"
     "@dynamic-labs/ethers-v6": "npm:^2.0.7"
