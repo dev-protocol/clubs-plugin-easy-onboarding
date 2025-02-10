@@ -11,7 +11,7 @@ export default ({ chainId }: Readonly<{ chainId: number | string }>) => {
 	)
 
 	return (
-		<span className="absolute top-[100%] -mt-1 flex w-full items-center justify-center gap-2 rounded-b-lg bg-dp-red-400 p-1 pt-2 text-center text-xs text-white">
+		<span className="bg-dp-red-400 absolute top-[100%] -mt-1 flex w-full items-center justify-center gap-2 rounded-b-lg p-1 pt-2 text-center text-xs text-white">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
