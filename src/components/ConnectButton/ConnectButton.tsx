@@ -10,21 +10,27 @@ import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core'
 
 import Button from './Button'
-import { Japanese } from '../../i18n/dynamic'
+import { English, Japanese } from '../../i18n/dynamic'
 import type { ConnectButtonProps } from '../../types'
+import cssOverrides from '../../i18n/cssOverrides'
 
 const langs = ['en', 'ja']
 
 export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
-	const [locale, setLocale] = useState<UndefinedOr<LocaleResource | null>>(null)
+	const [locale, setLocale] =
+		useState<UndefinedOr<{ lang: string; dic: LocaleResource } | null>>(null)
 
 	useEffect(() => {
 		// eslint-disable-next-line functional/no-conditional-statements
 		if (typeof window !== 'undefined') {
 			const loc = window.navigator.languages.find((l) => langs.includes(l))
-			setLocale(loc === 'ja' ? Japanese : undefined)
+			setLocale(
+				loc === 'ja'
+					? { lang: 'ja', dic: Japanese }
+					: { lang: 'en', dic: English },
+			)
 		}
-	})
+	}, [])
 
 	return locale !== null ? (
 		<DynamicContextProvider
@@ -33,8 +39,9 @@ export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
 				walletConnectPreferredChains: [`eip155:${chainId ?? 137}`],
 				walletConnectorExtensions: [EthersExtension],
 				walletConnectors: [EthereumWalletConnectors],
+				cssOverrides: cssOverrides(locale?.lang),
 			}}
-			locale={locale}
+			locale={locale?.dic}
 		>
 			<Button chainId={chainId} {...props} />
 		</DynamicContextProvider>

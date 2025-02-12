@@ -8,7 +8,7 @@ import type { Signer } from 'ethers'
 import { useEffect, useMemo, useState } from 'react'
 import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import { i18nFactory, Signal } from '@devprotocol/clubs-core'
-import type { connection as Connection } from '@devprotocol/clubs-core/connection'
+import { connection } from '@devprotocol/clubs-core/connection'
 import {
 	DynamicUserProfile,
 	useDynamicContext,
@@ -33,7 +33,6 @@ export default ({
 	buttonClassName?: string
 }) => {
 	const dynamic = useDynamicContext()
-	const [connection, setConnection] = useState<ReturnType<typeof Connection>>()
 	const [signer, setSigner] = useState<Signer>()
 	const [walletName, setWalletName] = useState<string>()
 	const [isWalletNeeded, setIsWalletNeeded] = useState<boolean>(false)
@@ -55,7 +54,7 @@ export default ({
 
 	useEffect(() => {
 		const cryptoWallet = dynamic.user?.verifiedCredentials.find(
-			(c) => c.format === 'blockchain',
+			(c) => c.format === 'blockchain' && Boolean(c.embeddedWalletId),
 		)
 
 		if (cryptoWallet) {
@@ -85,7 +84,7 @@ export default ({
 		setUnexpectedNetwork(
 			typeof chainId === 'number' && connectedChain !== chainId,
 		)
-		whenDefinedAll([connection], ([_connection]) =>
+		whenDefinedAll([connection()], ([_connection]) =>
 			_connection.chain.next(Number(dynamic.network)),
 		)
 	}, [dynamic.network])
@@ -95,7 +94,7 @@ export default ({
 			(c) => c.format === 'email',
 		)
 		console.log('**', { emailCredential })
-		whenDefinedAll([connection], ([_connection]) =>
+		whenDefinedAll([connection()], ([_connection]) =>
 			_connection.identifiers.next(
 				whenDefined(emailCredential?.publicIdentifier, (email) => ({
 					email,
@@ -103,12 +102,6 @@ export default ({
 			),
 		)
 	}, [dynamic.user])
-
-	useEffect(() => {
-		import('@devprotocol/clubs-core/connection').then((C) => {
-			setConnection(C.connection())
-		})
-	}, [])
 
 	useEffect(() => {
 		const eoa = dynamic?.primaryWallet?.address
@@ -122,14 +115,14 @@ export default ({
 	}, [dynamic?.primaryWallet?.address])
 
 	useEffect(() => {
-		whenDefinedAll([connection], ([_connection]) => {
+		whenDefinedAll([connection()], ([_connection]) => {
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
 		})
-	}, [signer, connection])
+	}, [signer])
 
 	useEffect(() => {
-		whenDefinedAll([connection], ([_connection]) => {
+		whenDefinedAll([connection()], ([_connection]) => {
 			// console.log('$$$ Called here', signer)
 
 			// signal
@@ -151,7 +144,7 @@ export default ({
 					}
 				})
 		})
-	}, [connection])
+	}, [])
 
 	return (
 		<span className="group/awesome-onboarding relative block">
