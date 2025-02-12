@@ -133,7 +133,7 @@ export default ({
 			// console.log('$$$ Called here', signer)
 
 			// signal
-			const sub = _connection.signal
+			_connection.signal
 				.pipe(scan((total, n) => (n === CALLED ? total + 1 : total), 0))
 				.subscribe((calledCount) => {
 					// Subscribe only once globally
@@ -147,7 +147,7 @@ export default ({
 								dynamic.handleLogOut()
 							}
 						})
-						sub.unsubscribe()
+						// sub.unsubscribe()
 					}
 				})
 		})
