@@ -8,7 +8,7 @@ import type { Signer } from 'ethers'
 import { useEffect, useMemo, useState } from 'react'
 import { whenDefined, whenDefinedAll } from '@devprotocol/util-ts'
 import { i18nFactory, Signal } from '@devprotocol/clubs-core'
-import { connection } from '@devprotocol/clubs-core/connection'
+import type { connection as Connection } from '@devprotocol/clubs-core/connection'
 import {
 	DynamicUserProfile,
 	useDynamicContext,
@@ -34,6 +34,7 @@ export default ({
 }) => {
 	const dynamic = useDynamicContext()
 	const [signer, setSigner] = useState<Signer>()
+	const [connection, setConnection] = useState<ReturnType<typeof Connection>>()
 	const [walletName, setWalletName] = useState<string>()
 	const [isWalletNeeded, setIsWalletNeeded] = useState<boolean>(false)
 	const [isUnexpectedNetwork, setUnexpectedNetwork] = useState<boolean>(false)
@@ -51,6 +52,12 @@ export default ({
 	console.log({ dynamic })
 
 	const loggedIn = useMemo(() => dynamic?.user !== undefined, [dynamic?.user])
+
+	useEffect(() => {
+		import('@devprotocol/clubs-core/connection').then((it) => {
+			setConnection(it.connection())
+		})
+	}, [])
 
 	useEffect(() => {
 		const cryptoWallet = dynamic.user?.verifiedCredentials.find(
@@ -84,24 +91,24 @@ export default ({
 		setUnexpectedNetwork(
 			typeof chainId === 'number' && connectedChain !== chainId,
 		)
-		whenDefinedAll([connection()], ([_connection]) =>
+		whenDefinedAll([connection], ([_connection]) =>
 			_connection.chain.next(Number(dynamic.network)),
 		)
-	}, [dynamic.network])
+	}, [dynamic.network, connection])
 
 	useEffect(() => {
 		const emailCredential = dynamic.user?.verifiedCredentials?.find(
 			(c) => c.format === 'email',
 		)
 		console.log('**', { emailCredential })
-		whenDefinedAll([connection()], ([_connection]) =>
+		whenDefinedAll([connection], ([_connection]) =>
 			_connection.identifiers.next(
 				whenDefined(emailCredential?.publicIdentifier, (email) => ({
 					email,
 				})),
 			),
 		)
-	}, [dynamic.user])
+	}, [dynamic.user, connection])
 
 	useEffect(() => {
 		const eoa = dynamic?.primaryWallet?.address
@@ -115,14 +122,14 @@ export default ({
 	}, [dynamic?.primaryWallet?.address])
 
 	useEffect(() => {
-		whenDefinedAll([connection()], ([_connection]) => {
+		whenDefinedAll([connection], ([_connection]) => {
 			// console.log('Called here', signer)
 			_connection.signer.next(signer)
 		})
-	}, [signer])
+	}, [signer, connection])
 
 	useEffect(() => {
-		whenDefinedAll([connection()], ([_connection]) => {
+		whenDefinedAll([connection], ([_connection]) => {
 			// console.log('$$$ Called here', signer)
 
 			// signal
@@ -144,7 +151,7 @@ export default ({
 					}
 				})
 		})
-	}, [])
+	}, [connection])
 
 	return (
 		<span className="group/awesome-onboarding relative block">
