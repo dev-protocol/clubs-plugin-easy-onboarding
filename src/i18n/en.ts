@@ -14,6 +14,12 @@ export default {
         trail_message_social: 'through {{socialOauth}}',
       }
    */
+	dyn_sandbox_maximum_threshold: {
+		title: 'Max User Limit Reached',
+		description:
+			'Your sandbox environment has reached your 100 MAU limit. To test with new users, delete existing users.',
+		button: 'Back',
+	},
 	dyn_account_exists: {
 		connect: 'Connect with {{socialOauth}}',
 		description_email: 'It looks like an account already exists using',
@@ -30,13 +36,66 @@ export default {
         testnet_warning: 'A testnet network has been selected. Please only use testnet funds or they will be lost.',
         ordinals_address: 'Ordinals address',
         payment_address: 'Payment address',
-     }
+        balance: 'Balance',
+        options: {
+          copy_ens: 'Copy ENS',
+          view_address: 'View address',
+          settings: 'Wallet settings',
+          export: 'Export private keys',
+        },
+      }
    */
 	dyn_active_wallet_info: {
 		testnet_warning:
 			'A testnet network has been selected. Please only use testnet funds or they will be lost.',
 		ordinals_address: 'Ordinals address',
 		payment_address: 'Payment address',
+		balance: 'Balance',
+		options: {
+			copy_ens: 'Copy ENS',
+			view_address: 'View address',
+			settings: 'Wallet settings',
+			export: 'Export private keys',
+		},
+	},
+	/**
+   * @description copy keys for wallet details card
+   * @default
+   * {
+        header: 'Wallet Details',
+        address: 'Address',
+        copy: 'Copy',
+        copied: 'Copied!',
+     }
+   */
+	dyn_wallet_details_card: {
+		header: 'Wallet Details',
+		address: 'Address',
+		copy: 'Copy',
+		copied: 'Copied!',
+	},
+	/**
+   * @description copy keys for add network view
+   * @default
+   * {
+      title: 'Add {{name}} network to your wallet',
+      add_button: {
+        title: 'Add network',
+      },
+      cancel_button: {
+        title: 'Cancel',
+      },
+    }
+   */
+	dyn_add_network_view: {
+		title: 'Network unavailable',
+		description: 'This network is not supported in your {{name}} wallet.',
+		add_button: {
+			title: 'Add Network',
+		},
+		cancel_button: {
+			title: 'Cancel',
+		},
 	},
 	/**
    * @description copy keys for bridge view
@@ -78,11 +137,11 @@ export default {
 			title: 'Connect to {{appName}}',
 		},
 		widget: {
-			address: 'Copy user ID',
+			address: 'Copy wallet address',
 			connect: 'Connect wallet',
 			connect_with_network: 'Connect {{blockchainName}} wallet',
 			copy: {
-				address: 'Copy user ID',
+				address: 'Copy wallet address',
 				ens: 'Copy ENS',
 			},
 			disconnect: 'Disconnect',
@@ -390,7 +449,7 @@ export default {
    * @description copy keys for one-time password verification view after logging in with dynamic email or phone number provider or after kyc verification
    * @default
    * {
-      code_not_received: 'Did not receive your code yet?',
+      code_not_received: 'Did not receive a code? Check spam or',
       code_sent: 'Code sent',
       description: 'We’ve sent a verification code to',
       log_out_button: 'Log out',
@@ -414,7 +473,7 @@ export default {
     },
    */
 	dyn_otp_verification: {
-		code_not_received: 'Did not receive your code yet?',
+		code_not_received: 'Did not receive a code? Check spam or',
 		code_sent: 'Code sent',
 		description: 'We’ve sent a verification code to',
 		log_out_button: 'Log out',
@@ -434,6 +493,17 @@ export default {
 			complete:
 				'Verification complete, the phone number is now verified to this account.',
 		},
+	},
+	/**
+   * @description copy keys for deposit view
+   * @default
+   * {
+      title: 'Deposit',
+    }
+   */
+	dyn_deposit: {
+		title: 'Deposit',
+		receive_funds_on: 'You can receive tokens on ',
 	},
 	/**
    * @description copy keys for embedded wallet authenticator choice view
@@ -581,81 +651,95 @@ export default {
 	/**
    * @description copy keys for log in view
    * @default
-   * {
-      connect_wallet: {
-        title: 'Connect',
+   * dyn_login: {
+    connect_wallet: {
+      title: 'Connect',
+    },
+    email_form: {
+      email_field: {
+        label: 'Enter your email',
       },
+      submit_button: {
+        label: 'Continue',
+      },
+    },
+    email_or_phone: {
+      use_email: 'Use email',
+      use_phone: 'Use phone',
+      prefer_email: 'Prefer email sign up?',
+      prefer_phone: 'Prefer phone number sign up?',
+    },
+    helper: {
+      all_wallet_list: 'Get your first wallet',
       email_form: {
-        email_field: {
-          label: 'Enter your email',
-        },
-        submit_button: {
-          label: 'Continue'
-        }
+        invalid_email: 'Invalid or incorrect email. Did you mistype it?',
       },
-      email_or_phone: {
-        use_email: 'Use email',
-        use_phone: 'Use phone',
-        prefer_email: 'Prefer email sign up?',
-        prefer_phone: 'Prefer phone number sign up?',
+      pending_connect: {
+        title: 'Connecting a wallet',
       },
-      helper: {
-        all_wallet_list: 'Get your first wallet',
-        email_form: {
-          invalid_email: 'Invalid or incorrect email. Did you mistype it?',
-        },
-        pending_connect: {
-          title: 'Connecting a wallet',
-        },
-        pending_signature: {
-          title: 'Signing a wallet',
-        },
-        pending_signature_without_back_button: {
-          title: 'Signing a wallet',
-        },
-        phone_number_form: {
-          invalid_phone: 'Invalid or incorrect number. Did you mistype it?',
-          invalid_sms_verification:
-            'Invalid or incorrect number. Did you mistype it?',
-        },
-        qr_code: {
-          title: 'Connecting a wallet',
-        },
-        wallet_only: 'Get your first wallet',
+      pending_signature: {
+        title: 'Signing a wallet',
+      },
+      pending_signature_without_back_button: {
+        title: 'Signing a wallet',
+      },
+      phone_number_form: {
+        invalid_phone: 'Invalid or incorrect number. Did you mistype it?',
+        invalid_sms_verification:
+          'The code you entered is incorrect. Please try again.',
+        too_many_sms_verification_attempts:
+          'Too many verification attempts, please try again later.',
       },
       qr_code: {
-        title: 'Connect',
+        title: 'Connecting a wallet',
       },
-      select_wallet_in_wallet_group: {
-        title: 'Select'
-      },
-      separators: {
-        default: 'OR',
-      },
-      sign_wallet: {
-        title: 'Sign',
-      },
-      social: {
-        button_label: 'Continue with {{provider}}',
-      },
-      wallet_group: {
-        title: 'Select Chain',
-      },
-      title: {
-        all: 'Log in or sign up',
-        all_wallet_list: 'Select your wallet',
-        wallet_only: 'Select your wallet',
-      },
-      wallet_list: {
-        button_only: 'Continue with a wallet',
-      },
-      wrong_social_account: {
-        retry_button: 'Try again',
-        retry_title: 'Please connect with: ',
-        subtitle: 'You must connect with the same account you originally signed in with.',
-        title: 'Whoops. Wrong Account',
-},
-    }
+      wallet_only: 'Get your first wallet',
+    },
+    qr_code: {
+      title: 'Connect',
+    },
+    separators: {
+      default: 'OR',
+    },
+    sign_wallet: {
+      title: 'Sign',
+    },
+    select_wallet_in_wallet_group: {
+      title: 'Select',
+    },
+    social: {
+      button_label: 'Continue with {{provider}}',
+      overlay_title: 'Choose a social account',
+    },
+    title: {
+      all: 'Log in or sign up',
+      all_wallet_list: 'Select your wallet',
+      wallet_only: 'Select your wallet',
+    },
+    wallet_group: {
+      title: 'Select Chain',
+    },
+    wallet_list: {
+      button_only: 'Continue with a wallet',
+    },
+    mobile_wallet_redirect: {
+      backup_title: 'Connect mobile app',
+      prompt: "Tap 'Open' to continue",
+      get_app_prompt: 'Get',
+      open_prompt: 'Open',
+      redirect_fail_message:
+        "If the app doesn't open, you might need to download the {{walletName}} Wallet app.",
+      app_store: 'App Store',
+      play_store: 'Play Store',
+    },
+    wrong_social_account: {
+      retry_button: 'Try again',
+      retry_title: 'Please connect with: ',
+      subtitle:
+        'You must connect with the same account you originally signed in with.',
+      title: 'Whoops. Wrong Account',
+    },
+  },
    */
 	dyn_login: {
 		connect_wallet: {
@@ -715,6 +799,7 @@ export default {
 		},
 		social: {
 			button_label: 'Continue with {{provider}}',
+			overlay_title: 'Choose a social account',
 		},
 		title: {
 			all: 'Log in or sign up',
@@ -726,6 +811,16 @@ export default {
 		},
 		wallet_list: {
 			button_only: 'Continue with a wallet',
+		},
+		mobile_wallet_redirect: {
+			backup_title: 'Connect mobile app',
+			prompt: "Tap 'Open' to continue",
+			get_app_prompt: 'Get',
+			open_prompt: 'Open',
+			redirect_fail_message:
+				"If the app doesn't open, you might need to download the {{walletName}} Wallet app.",
+			app_store: 'App Store',
+			play_store: 'Play Store',
 		},
 		wrong_social_account: {
 			retry_button: 'Try again',
@@ -807,26 +902,37 @@ export default {
       reveal_button_label: 'Reveal',
       copy_button_label: 'Copy to clipboard',
       done_button_label: "I'm Done",
+      aa_warning: {
+         title: 'Your assets are not in this wallet.',
+         subtitle:
+         'This is a smart-contract wallet. You will not see your balance if you import this to an external service. Please send your assets to your preferred external wallet first to access your funds:',
+         button: 'here',
+      },
+      unlink: 'Unlink wallet info',
     },
    */
 	dyn_embedded_reveal: {
 		title: 'Export wallet',
 		agreement_title: 'Agree to continue',
+		prompt_for_export_title: 'Back up wallet key',
 		private_key_title: 'Private key',
 		recovery_phrase_title: 'Secret recovery phrase',
 		badge_label: 'Sensitive information',
+		prompt_for_export_description:
+			'Your wallet is ready. Back up your key to protect your assets.',
 		statement_1: {
-			title: 'Your wallet is non-custodial',
-			description: 'You are always in control of it.',
+			title: 'Non-custodial wallet',
+			description: "You're always in control",
 		},
 		statement_2: {
-			title: 'Do not publicly share your wallet key',
-			description: 'Your {{credential_type}} controls your account and assets.',
+			title: 'Keep your key private. It controls your account and assets.',
 		},
 		checkbox_label:
 			'I am responsible for safeguarding and using my wallet key information.',
 		reveal_description: 'Make sure to safely back up this information',
+		skip_button_label: 'Skip for now',
 		reveal_button_label: 'Reveal',
+		backup_button_label: 'Back up now',
 		copy_button_label: 'Copy to clipboard',
 		done_button_label: "I'm Done",
 		aa_warning: {
@@ -835,31 +941,61 @@ export default {
 				'This is a smart-contract wallet. You will not see your balance if you import this to an external service. Please send your assets to your preferred external wallet first to access your funds:',
 			button: 'here',
 		},
+		unlink: 'Unlink wallet info',
 	},
 	/**
-   * @description wallet settings for Dynamic wallet settings view which are used inside dynamic widget
+	 * @description export keys for Dynamic embedded delete view
+	 * @default
+	 *
+	 */
+	dyn_embedded_delete: {
+		title: 'Unlink from app',
+		description_1:
+			'By continuing you acknowledge that if you return to the application, you will receive a new wallet address.',
+		description_2:
+			'Once unlinked, you cannot recover any wallet information through this application including any associated smart contract wallets.',
+		acknowledgement:
+			'I have safely backed up my wallet seed phrase information. If I return to this application, a new wallet will be created for me.',
+		cancel_button: 'Cancel',
+		action_button: 'Unlink & Log out',
+	},
+	/**
+   * @description Settings for Dynamic settings view which are used inside dynamic widget
    * @default
    * {
-      export_section: {
-        private_key_button: 'Private key',
-        srp_button: 'Recovery phrase',
-        title: 'Export & Backup',
-      },
-      identity_section: {
-        title: 'Recovery',
-        add_email_button: 'Add an email',
-      },
-      tags: { recommended: 'Recommended' },
-      signing_section: {
-        email_auth_button: 'One time code',
-        passkey_button: 'Passkeys',
-        password_button: 'Passcode',
-        title: 'Security Methods',
-      },
-      title: 'Wallet settings',
-    }
+    global_connectivity_section: {
+      title: 'Global Connectivity',
+      connected_apps_button: 'Connected Apps',
+    },
+    export_section: {
+      private_key_button: 'Private key',
+      srp_button: 'Recovery phrase',
+      title: 'Export & Backup',
+    },
+    identity_section: {
+      title: 'Recovery',
+      add_email_button: 'Add an email',
+    },
+    tags: { recommended: 'Recommended' },
+    security_section: {
+      email_auth_button: 'One time code',
+      passkey_button: 'Passkeys',
+      password_button: 'Passcode',
+      mfa_button: 'Authenticator App',
+      title: '2 factor authentication',
+    },
+    title: 'Settings',
+    button_logout: 'Log out',
+    empty_screen: {
+      title: 'Nothing to see here yet!',
+    },
+  }
    */
-	dyn_wallet_settings: {
+	dyn_settings: {
+		global_connectivity_section: {
+			title: 'Global Connectivity',
+			connected_apps_button: 'Connected Apps',
+		},
 		export_section: {
 			private_key_button: 'Private key',
 			srp_button: 'Recovery phrase',
@@ -870,13 +1006,148 @@ export default {
 			add_email_button: 'Add an email',
 		},
 		tags: { recommended: 'Recommended' },
-		signing_section: {
+		security_section: {
 			email_auth_button: 'One time code',
 			passkey_button: 'Passkeys',
 			password_button: 'Passcode',
-			title: 'Security Methods',
+			mfa_button: 'Authenticator App',
+			title: '2 factor authentication',
 		},
-		title: 'Security settings',
+		title: 'Settings',
+		button_logout: 'Log out',
+		empty_screen: {
+			title: 'Nothing to see here yet!',
+		},
+	},
+	/**
+   * @description copy keys for global wallet view
+   * @default
+   *  {
+    connect_to_apps: 'Connect to apps',
+    scan_qr_code: 'Scan QR Code',
+    or: 'OR',
+    walletconnect_uri: 'WalletConnect URI',
+    the_dapp: 'the dApp',
+    this_app: 'this app',
+    confirm: {
+      title: 'Confirm Connection',
+      description: 'Are you sure you want to connect to {{name}}?',
+      cancel_button: 'Cancel',
+      connect_button: 'Connect',
+    },
+    banner: {
+      warning: 'There was an error connecting to {{name}}.',
+      success: 'Successfully connected to {{name}}.',
+      already_connected: 'You are already connected to {{name}}.',
+      expired:
+        'The link you entered expired, please get a new URI from the app.',
+      bad_input:
+        'Invalid URI. Please check below for how to find the valid URI.',
+    },
+    help: {
+      title: 'How do I find the URI code?',
+      step: {
+        1: '1. Go to the website you want to connect to',
+        2: '2. Locate the "Connect" or "Login" button',
+        3: '3. Open WalletConnect from the list',
+      },
+      learn_more: 'Learn more about global wallets',
+    },
+    malicious_site: {
+      certain: {
+        title: 'Malicious app detected!',
+        subtitle_header: 'Risk of losing funds',
+        subtitle_text:
+          'The site is known to exploit and or take assets from connected wallets.',
+        go_back: 'Cancel',
+        proceed: 'Proceed',
+      },
+      unknown: {
+        title: 'Site verification did not run.',
+        subtitle_header: 'Double check the app',
+        subtitle_text:
+          'We were unable to verify the vailidity of the app at this time.',
+        go_back: 'Cancel',
+        proceed: 'Proceed',
+      },
+    },
+     connected_apps: {
+      title: 'Connected Apps',
+      no_connections: 'No connected apps',
+    },
+  },
+   */
+	global_wallet: {
+		connect_to_apps: 'Connect to apps',
+		scan_qr_code: 'Scan QR Code',
+		or: 'OR',
+		walletconnect_uri: 'WalletConnect URI',
+		the_dapp: 'the dApp',
+		this_app: 'this app',
+		confirm: {
+			title: 'Confirm Connection',
+			description: 'Are you sure you want to connect to {{name}}?',
+			cancel_button: 'Cancel',
+			connect_button: 'Connect',
+		},
+		banner: {
+			warning: 'There was an error connecting to {{name}}.',
+			success: 'Successfully connected to {{name}}.',
+			already_connected: 'You are already connected to {{name}}.',
+			expired:
+				'The link you entered expired, please get a new URI from the app.',
+			bad_input:
+				'Invalid URI. Please check below for how to find the valid URI.',
+		},
+		help: {
+			title: 'How do I find the URI code?',
+			step: {
+				1: '1. Go to the website you want to connect to',
+				2: '2. Locate the "Connect" or "Login" button',
+				3: '3. Open WalletConnect from the list',
+			},
+			learn_more: 'Learn more about global wallets',
+		},
+		malicious_site: {
+			certain: {
+				title: 'Malicious app detected!',
+				subtitle_header: 'Risk of losing funds',
+				subtitle_text:
+					'The site is known to exploit and or take assets from connected wallets.',
+				go_back: 'Cancel',
+				proceed: 'Proceed',
+			},
+			unknown: {
+				title: 'Site verification did not run.',
+				subtitle_header: 'Double check the app',
+				subtitle_text:
+					'We were unable to verify the vailidity of the app at this time.',
+				go_back: 'Cancel',
+				proceed: 'Proceed',
+			},
+		},
+		connected_apps: {
+			title: 'Connected Apps',
+			subtitle:
+				'Connected apps allow you to interact with your wallet on other platforms.',
+			success: 'Successfully connected to {{name}}.',
+		},
+	},
+	/**
+   * @description copy keys for mfa management view
+   * @default
+   *  {
+        title: 'Authenticator App',
+        add_mfa_button: 'Authenticator App',
+        no_devices: 'No authenticator apps configured',
+        generate_backup_codes_button: 'Get new backup codes',
+      },
+   */
+	dyn_manage_mfa: {
+		title: 'Authenticator App',
+		add_mfa_button: 'Authenticator App',
+		no_devices: 'No authenticator apps configured',
+		generate_backup_codes_button: 'Get new backup codes',
 	},
 	/**
    * @description copy keys for mfa views
@@ -888,30 +1159,53 @@ export default {
         authenticator_app: 'Authenticator app',
         authenticator_app_description:
           'Use your preferred authenticator app such as Authy, Google Authenticator, etc.',
-        sms_code: 'SMS code',
-        sms_code_description:
-          'Use your preferred authenticator app such as Authy, Google Authenticator, etc.',
+        backup_code: 'Backup code',
+        backup_code_description:
+          'Enter one of your saved backup codes to authenticate.',
+        choose_another_method:  'Choose another method',
+        choose_another_method_description: 'Use one of the methods below:',
+      logout: 'Log out',
       },
       display_backup_codes_view: {
         title: 'Back up your codes',
-        body: 'Backup codes help recover your account if you lose access to your device.',
+        body: 'Backup codes help recover your account if you lose access to your device. Each code can be used only 1 time.',
         warning: 'You won’t be able to see these again',
         copy_all: 'Copy all',
         download: 'Download',
-        checkbox: 'I have safely stored a copy of my password',
+        checkbox: 'I have safely stored a copy of my backup codes',
         complete: 'Complete',
       },
       otp_verification_view: {
         title: 'Confirm verification code',
         body: 'Enter the verification code generated by your authenticator app',
         error: 'Invalid code. Please try again.',
+        rate_limit_error: 'Too many attempts, please try again later.',
+        choose_another_method: 'Sign in another way',
       },
       secure_device_view: {
         title: 'Secure your account',
         body: 'Setup a new sign-in method in your authenticator app',
         continue: 'Continue',
+        helper: {
+          button: "Can't scan QR Code?",
+          title: 'Troubles with scanning?',
+          step1: {
+            title: 'Open your Authenticator App',
+            description: 'You will set up a new sign-in method',
+          },
+          step2: {
+            title: 'Enter the key provided below',
+            description: 'Make sure time-based or one-time password is enabled.',
+          },
+          uri: {
+            title: 'Copy the full URI',
+            description:
+              'This only works if your authenticator app supports TOTP URIs',
+          },
+        },
+        logout: 'Log out',
       },
-     },
+    },
    */
 	dyn_mfa: {
 		choose_device_view: {
@@ -921,29 +1215,35 @@ export default {
 			authenticator_app: 'Authenticator app',
 			authenticator_app_description:
 				'Use your preferred authenticator app such as Authy, Google Authenticator, etc.',
-			sms_code: 'SMS code',
-			sms_code_description:
-				'Use your preferred authenticator app such as Authy, Google Authenticator, etc.',
+			backup_code: 'Backup code',
+			backup_code_description:
+				'Enter one of your saved backup codes to authenticate.',
+			choose_another_method: 'Choose another method',
+			choose_another_method_description: 'Use one of the methods below:',
+			logout: 'Log out',
 		},
 		display_backup_codes_view: {
 			title: 'Back up your codes',
-			body: 'Backup codes help recover your account if you lose access to your device.',
+			body: 'Backup codes help recover your account if you lose access to your device. Each code can be used only 1 time.',
 			warning: 'You won’t be able to see these again',
 			copy_all: 'Copy all',
 			download: 'Download',
-			checkbox: 'I have safely stored a copy of my password',
+			checkbox: "I've safely stored a copy of my backup codes",
 			complete: 'Complete',
 		},
 		otp_verification_view: {
 			title: 'Confirm verification code',
 			body: 'Enter the verification code generated by your authenticator app',
 			error: 'Invalid code. Please try again.',
+			rate_limit_error: 'Too many attempts, please try again later.',
+			choose_another_method: 'Sign in another way',
 		},
 		secure_device_view: {
 			title: 'Secure your account',
 			body: 'Setup a new sign-in method in your authenticator app',
 			continue: 'Continue',
 			helper: {
+				button: "Can't scan QR Code?",
 				title: 'Troubles with scanning?',
 				step1: {
 					title: 'Open your Authenticator App',
@@ -959,10 +1259,11 @@ export default {
 						'This only works if your authenticator app supports TOTP URIs',
 				},
 			},
+			logout: 'Log out',
 		},
 		recovery_view: {
 			title: 'Enter your backup code',
-			body: 'Your backup code is the 24 character code you received when you activated two step authentication',
+			body: 'Your backup code is one of the 10 codes you received when you first enrolled in multi-factor authentication',
 			input_label: 'Enter back up code',
 			button_label: 'Continue',
 			get_help: {
@@ -1056,10 +1357,11 @@ export default {
     }
    */
 	dyn_need_help_section: {
-		info: 'Problem Signing?',
+		info: 'Need Help?',
 		contact_support: 'Contact support',
 		divider: 'or',
-		help_button: 'go here.',
+		help_button: 'Go here for support',
+		visit_platform: 'Visit {{platform}}',
 	},
 	/**
    * @description copy keys for network not supported view
@@ -1077,6 +1379,7 @@ export default {
 			'Your wallet is not connected to a supported network. Please update before continuing.',
 		title: 'Update Network',
 		warning_message: 'This network is not available, please update.',
+		wallet: 'Not Supported',
 	},
 	/**
    * @description copy keys for network not supported view for manual switch
@@ -1538,7 +1841,7 @@ export default {
           amount: 'Amount',
           from: 'From (You)',
           gas: 'Gas',
-          gas_estimate: 'Gas (estimate)',
+          gas_estimate: 'Network Fee',
           to: 'To',
           total: 'Total',
         },
@@ -1598,13 +1901,26 @@ export default {
 		confirmation: {
 			cancel_button: 'Cancel',
 			confirm_button: 'Confirm',
+			send: 'Confirm',
 			data: {
 				amount: 'Amount',
 				from: 'From (You)',
 				gas: 'Gas',
-				gas_estimate: 'Gas (estimate)',
+				gas_estimate: 'Network Fee',
 				to: 'To',
 				total: 'Total',
+				wallet_used: 'Wallet used',
+				network: 'Network',
+				recipient: 'Recipient',
+				destination: 'Interacting with',
+				gas_tooltip:
+					'Gas fees are charged by the network and can change quickly based on usage.',
+				sending: 'Sending',
+				receiving: 'Receiving',
+				transfer: {
+					send: 'Send',
+					receive: 'Receive',
+				},
 			},
 			not_applied: 'N/A',
 			title: 'Confirm transaction',
@@ -1612,28 +1928,33 @@ export default {
 		data: {
 			amount: {
 				label: 'Amount',
-				placeholder: 'Select amount',
+				placeholder: 'Enter amount',
 			},
 			balance: {
 				label: 'Balance:',
 			},
 			from: 'Send from',
+			send: 'Send',
+			send_preview: 'Send Preview',
+			confirmation_tx: 'Confirm Transaction',
+			banner: "You're nearly done! Confirm transaction to proceed.",
 			recipient: {
-				label: 'Recipient',
+				label: 'Address',
 				placeholder: 'Enter wallet address...',
 			},
 		},
 		multiple_recipients: 'Multiple',
+		preview_transaction: 'Preview transaction',
 		send_button: 'Send now',
 		succeeded: {
-			continue_button: 'Continue',
+			continue_button: 'Done',
 			network: {
 				label: 'Network',
 			},
 			recipient: {
 				label: 'Recipient',
 			},
-			title: 'Transaction successfully sent',
+			title: 'Transaction successfully sent to',
 			total_amount: {
 				label: 'Total amount',
 			},
@@ -1651,9 +1972,24 @@ export default {
 				required: 'The recipient is required',
 			},
 		},
+		info_message: {
+			refresh_balance_time: 'Your balance may take up to 30s to refresh.',
+		},
 		warning_message: {
-			insufficient_funds:
-				'Insufficient funds due to gas price increase from estimate. Please add {{amountLeft}} {{currencySymbol}} to continue.',
+			insufficient_funds: {
+				title: 'Insufficient funds',
+				description:
+					'Insufficient funds for transaction. Please add {{amountLeft}} {{currencySymbol}} to continue.',
+			},
+			insufficient_gas_funds: {
+				title: 'Insufficient gas funds',
+				description:
+					'Please add {{amountLeft}} {{currencySymbol}} to continue.',
+			},
+			failed_simulation: {
+				title: 'Transaction expected to fail',
+				description: 'Something went wrong. Check your balances and try again.',
+			},
 		},
 		error_message: {
 			gas_not_sponsored:
@@ -1828,6 +2164,11 @@ export default {
 		},
 		log_out_button: 'Log out',
 		title: 'Transfer this wallet?',
+		already_exists: {
+			title: 'Wallet Already Linked',
+			description:
+				'This wallet is already used as an embedded wallet. You cannot link it unless you delete the existing embedded wallet.',
+		},
 	},
 	/**
    * @description copy keys for connecting wallets list view
@@ -1992,6 +2333,27 @@ export default {
 			link_wallet_button: 'Link wallet',
 			title: 'Want to add a wallet?',
 		},
+		edit_profile_button: 'Edit Profile',
+	},
+	/**
+   * @description copy keys for Dynamic subdomain field
+   * @default
+   * {
+      label: 'Subdomain Handle',
+      available: 'Subdomain is available',
+      not_available: 'Subdomain is not available',
+      error: 'Subdomain check failed',
+      details:
+        'A subdomain handle will create a unique ENS subdomain for your wallet, helping you easily share and identify it.',
+    }
+   */
+	dyn_subdomain_field: {
+		label: 'Subdomain Handle',
+		available: 'Subdomain is available',
+		not_available: 'Subdomain is not available',
+		error: 'Subdomain check failed',
+		details:
+			'A subdomain handle will create a unique ENS subdomain for your wallet, helping you easily share and identify it.',
 	},
 	/**
    * @description copy keys for Detected new wallet prompt
@@ -2007,5 +2369,141 @@ export default {
 		description:
 			'Your active account in {{walletName}} has changed. This account is not currently linked to this app. Do you want to add it?',
 		confirm_button: 'Yes, link this wallet',
+	},
+	/**
+     * @description copy keys for sync wallet view
+     * @default
+     * {
+        switch_wallet: {
+          title: 'Your wallets are mismatched. \nSwitch to continue.',
+          active_address: {
+            heading: 'Currently active in wallet',
+          },
+          expected_address: {
+            heading: 'Currently active on website',
+            prompt: 'Manually switch to this wallet',
+          },
+        },
+        reconnecting: {
+          title: 'This wallet is not connected',
+          description: 'Reconnecting wallet {{walletAddress}} to make it active...',
+        },
+        reconnect_with_qr_code: {
+          title: 'This wallet is not connected',
+        },
+        cancel_button: 'Cancel',
+        retry_button: 'Retry',
+      }
+    */
+	dyn_sync_wallet: {
+		switch_wallet: {
+			title: 'Your wallets are mismatched. \nSwitch to continue.',
+			active_address: {
+				heading: 'Currently active in wallet',
+			},
+			expected_address: {
+				heading: 'Currently active on website',
+				prompt: 'Manually switch to this wallet',
+			},
+		},
+		reconnecting: {
+			title: 'This wallet is not connected',
+			description: 'Reconnecting wallet {{walletAddress}} to make it active...',
+		},
+		reconnect_with_qr_code: {
+			title: 'This wallet is not connected',
+		},
+		cancel_button: 'Cancel',
+		retry_button: 'Retry',
+	},
+	/**
+   * @description copy keys for the wallet funding flow
+   * @default
+   * {
+      success: 'Transaction processing',
+      success_txn_link: 'View transaction',
+
+      funding_method_selection: {
+        title: 'Deposit',
+        qr_option: 'Receive by QR',
+        buy_option: 'Buy Crypto',
+        external_wallet_option: 'From External Wallets',
+      },
+      onramp_provider_selection: {
+        title: 'Select provider',
+        description: 'Select from a list of available onramp providers.',
+      },
+      from_external_wallet: {
+        wallet_list: {
+          title: 'Fund from Wallet',
+        },
+        funding_view: {
+          title: 'Fund from Wallet',
+          wallet_detail_from: 'From',
+          confirm_button: 'Confirm Transaction',
+          pricing_unavailable:
+            'Pricing unavailable.',
+          minimum_error: 'Minimum {{minimum}}',
+          balance_error: 'Insufficient funds',
+        },
+        token_select: {
+          title: 'Select a Token',
+          search_placeholder: 'Search for a token',
+          no_assets_title: 'No Supported Assets',
+          no_assets_description: 'This wallet does not support any assets',
+        },
+      },
+    }
+   */
+	dyn_wallet_funding: {
+		success: 'Transaction processing',
+		success_txn_link: 'View transaction',
+		funding_method_selection: {
+			title: 'Deposit',
+			qr_option: 'Receive by QR',
+			buy_option: 'Buy Crypto',
+			external_wallet_option: 'From External Wallets',
+		},
+		onramp_provider_selection: {
+			title: 'Select provider',
+			description: 'Select from a list of available onramp providers.',
+		},
+		from_external_wallet: {
+			wallet_list: {
+				title: 'Fund from External Wallet',
+			},
+			funding_view: {
+				title: 'Fund from External Wallet',
+				wallet_detail_from: 'From',
+				confirm_button: 'Confirm Transaction',
+				pricing_unavailable: 'Pricing unavailable.',
+				minimum_error: 'Minimum {{minimum}}',
+				balance_error: 'Insufficient funds',
+			},
+			token_select: {
+				title: 'Select a Token',
+				search_placeholder: 'Search for a token',
+				no_assets_title: 'No Supported Assets',
+				no_assets_description: 'No supported assets in this wallet',
+			},
+		},
+	},
+	/**
+   * @description copy keys for Dynamic widget header
+   * @default
+   * {
+      buttons: {
+        deposit_funds: 'Deposit',
+        send_funds: 'Send',
+        more: 'More',
+      },
+    }
+   */
+	dyn_widget_header: {
+		buttons: {
+			deposit_funds: 'Deposit',
+			send_funds: 'Send',
+			more: 'More',
+		},
 	},
 } satisfies LocaleResource['en']
