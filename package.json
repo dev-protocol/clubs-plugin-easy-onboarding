@@ -85,7 +85,7 @@
 		"rollup": "4.34.6",
 		"rollup-plugin-dts": "^6.1.0",
 		"rxjs": "^7.8.1",
-		"sass": "1.84.0",
+		"sass": "1.85.0",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "4.0.6",
