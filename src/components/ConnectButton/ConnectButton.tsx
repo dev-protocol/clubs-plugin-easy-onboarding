@@ -4,7 +4,6 @@
 
 import { useEffect, useState } from 'react'
 import type { UndefinedOr } from '@devprotocol/util-ts'
-import { EthersExtension } from '@dynamic-labs/ethers-v6'
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 import type { LocaleResource } from '@dynamic-labs/sdk-react-core'
 import { DynamicContextProvider } from '@dynamic-labs/sdk-react-core'
@@ -37,7 +36,6 @@ export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
 			settings={{
 				environmentId,
 				walletConnectPreferredChains: [`eip155:${chainId ?? 137}`],
-				walletConnectorExtensions: [EthersExtension],
 				walletConnectors: [EthereumWalletConnectors],
 				cssOverrides: cssOverrides(locale?.lang),
 			}}

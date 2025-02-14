@@ -16,6 +16,7 @@ import {
 } from '@dynamic-labs/sdk-react-core'
 import NetworkError from './NetworkError'
 import { equals } from 'ramda'
+import { getSigner } from '@dynamic-labs/ethers-v6'
 
 import { Strings } from '../../i18n/plugin'
 import Clubs from '../Icon/Clubs'
@@ -75,7 +76,7 @@ export default ({
 		}
 
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		dynamic.primaryWallet?.connector.ethers?.getSigner().then((_signer) => {
+		getSigner(dynamic.primaryWallet).then((_signer) => {
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-expect-error
 			const same = equals(_signer, signer)
