@@ -743,14 +743,14 @@ export default {
    */
 	dyn_login: {
 		connect_wallet: {
-			title: 'Connect',
+			title: '接続',
 		},
 		email_form: {
 			email_field: {
-				label: 'Enter your email',
+				label: 'Eメールを入力',
 			},
 			submit_button: {
-				label: 'Continue',
+				label: '続ける',
 			},
 		},
 		email_or_phone: {
@@ -798,11 +798,11 @@ export default {
 			title: 'Select',
 		},
 		social: {
-			button_label: 'Continue with {{provider}}',
-			overlay_title: 'Choose a social account',
+			button_label: '{{provider}}を使う',
+			overlay_title: 'ソーシャルアカウントを選ぶ',
 		},
 		title: {
-			all: 'Log in or sign up',
+			all: 'サインイン/会員登録',
 			all_wallet_list: 'Select your wallet',
 			wallet_only: 'Select your wallet',
 		},
@@ -810,7 +810,7 @@ export default {
 			title: 'Select Chain',
 		},
 		wallet_list: {
-			button_only: 'Continue with a wallet',
+			button_only: 'ウォレットを使う',
 		},
 		mobile_wallet_redirect: {
 			backup_title: 'Connect mobile app',
@@ -913,22 +913,23 @@ export default {
    */
 	dyn_embedded_reveal: {
 		title: 'Export wallet',
-		agreement_title: 'Agree to continue',
+		agreement_title: '同意して続ける',
 		prompt_for_export_title: 'Back up wallet key',
 		private_key_title: 'Private key',
 		recovery_phrase_title: 'Secret recovery phrase',
-		badge_label: 'Sensitive information',
+		badge_label: '機密性の高い情報',
 		prompt_for_export_description:
-			'Your wallet is ready. Back up your key to protect your assets.',
+			'あなたのアカウント(ウォレット)はエクスポートの準備ができています。アセットやアイテムを保護するためにキーをバックアップします。',
 		statement_1: {
-			title: 'Non-custodial wallet',
-			description: "You're always in control",
+			title: 'ノンカストディアル・ウォレット',
+			description: '自分自身ですべてを管理します。',
 		},
 		statement_2: {
-			title: 'Keep your key private. It controls your account and assets.',
+			title:
+				'アカウントとアセットを管理するためにキーをプライベートに保ってください。',
 		},
 		checkbox_label:
-			'I am responsible for safeguarding and using my wallet key information.',
+			'私は自分のアカウント(ウォレット)のキー情報を保護し、使用する責任を負います。',
 		reveal_description: 'Make sure to safely back up this information',
 		skip_button_label: 'Skip for now',
 		reveal_button_label: 'Reveal',
@@ -997,9 +998,9 @@ export default {
 			connected_apps_button: 'Connected Apps',
 		},
 		export_section: {
-			private_key_button: 'Private key',
-			srp_button: 'Recovery phrase',
-			title: 'Export & Backup',
+			private_key_button: 'プライベートキー',
+			srp_button: 'リカバリーフレーズ',
+			title: 'エクスポートとバックアップ',
 		},
 		identity_section: {
 			title: 'Recovery',
@@ -1008,13 +1009,13 @@ export default {
 		tags: { recommended: 'Recommended' },
 		security_section: {
 			email_auth_button: 'One time code',
-			passkey_button: 'Passkeys',
+			passkey_button: 'パスキー',
 			password_button: 'Passcode',
 			mfa_button: 'Authenticator App',
-			title: '2 factor authentication',
+			title: '2 段階認証',
 		},
-		title: 'Settings',
-		button_logout: 'Log out',
+		title: '設定',
+		button_logout: 'ログアウト',
 		empty_screen: {
 			title: 'Nothing to see here yet!',
 		},
@@ -2251,7 +2252,7 @@ export default {
     }
    */
 	dyn_widget: {
-		connect: 'Log in or sign up',
+		connect: 'サインイン/会員登録',
 		empty_wallets: '{{action}} additional wallets to see them here.',
 		other_wallets: 'My other wallets',
 		empty_wallets_action_link: 'Link',
@@ -2317,13 +2318,13 @@ export default {
    */
 	dyn_user_profile: {
 		my_information: {
-			title: 'My information',
+			title: 'アカウント情報',
 		},
 		my_wallet: {
-			title: 'My wallet',
+			title: 'ウォレット',
 		},
 		social_accounts: {
-			title: 'Social accounts',
+			title: 'ソーシャルアカウント',
 		},
 		tooltips: {
 			verified_email: 'This email is verified',

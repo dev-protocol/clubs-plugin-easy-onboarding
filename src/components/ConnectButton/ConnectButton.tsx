@@ -38,6 +38,7 @@ export default ({ chainId, environmentId, ...props }: ConnectButtonProps) => {
 				walletConnectPreferredChains: [`eip155:${chainId ?? 137}`],
 				walletConnectors: [EthereumWalletConnectors],
 				cssOverrides: cssOverrides(locale?.lang),
+				social: { strategy: 'popup' },
 			}}
 			locale={locale?.dic}
 		>
