@@ -76,7 +76,6 @@ export default ({
 		}
 
 		if (dynamic.primaryWallet) {
-			// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 			getSigner(dynamic.primaryWallet).then((_signer) => {
 				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-expect-error
@@ -84,7 +83,9 @@ export default ({
 				// console.log('Called here', same)
 				// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 				!same && setSigner(_signer)
-			}) ?? setSigner(undefined)
+			})
+		} else {
+			setSigner(undefined)
 		}
 	}, [dynamic.primaryWallet, dynamic.user])
 
