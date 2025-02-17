@@ -1,6 +1,6 @@
 {
 	"name": "@devprotocol/clubs-plugin-awesome-onboarding",
-	"version": "0.8.0-beta.2",
+	"version": "0.8.0",
 	"type": "module",
 	"description": "Clubs plugin for intengrating awesome user onboarding.",
 	"main": "dist/index.js",
