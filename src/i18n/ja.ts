@@ -2051,7 +2051,7 @@ export default {
 	dyn_sign_message: {
 		cancel_button: 'Cancel',
 		sign_button: 'Sign',
-		title: 'Requesting Signature',
+		title: 'パスポートを作成するために、保存ボタンをクリックしてください',
 	},
 	/**
    * @description copy keys for social redirect view
