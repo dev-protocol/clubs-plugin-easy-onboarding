@@ -1,3 +1,4 @@
+import '../../process.env'
 import ConnectButton from '../ConnectButton/ConnectButton'
 import type { ConnectButtonProps } from '../../types'
 
